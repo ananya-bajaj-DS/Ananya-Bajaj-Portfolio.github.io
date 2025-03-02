@@ -349,7 +349,128 @@
 									</div>
 								</section>
 
+<!-- TESTT SECIN -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Journey - Experience Timeline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            padding: 20px;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #333;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        .container {
+            padding: 20px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%;
+        }
+        .content {
+            padding: 20px;
+            background: #1e1e1e;
+            position: relative;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+        }
+        .content h3 {
+            margin: 0;
+            color: #ffcc00;
+        }
+        .content p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #bbb;
+        }
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 20px;
+            }
+            .container {
+                width: 100%;
+                padding-left: 50px;
+            }
+            .right {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">My Journey</h2>
+    <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <img src="images/ephanti.jpeg" alt="Ephanti Logo" class="logo">
+                <div>
+                    <h3>AI Engineer - Ephanti</h3>
+                    <p>Aug '24 - Present | @Maven Assist Team</p>
+                </div>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <img src="images/nasa.jpeg" alt="NASA Logo" class="logo">
+                <div>
+                    <h3>AI/ML Intern - NASA Ames</h3>
+                    <p>Summer '24 | @NASA Aeronautics Research Institute</p>
+                </div>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <img src="images/nike.jpg" alt="Nike Logo" class="logo">
+                <div>
+                    <h3>Graduate Data Science Intern - Nike</h3>
+                    <p>Summer '23 | @Merchant Financial Planning Team</p>
+                </div>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <img src="images/UA.jpeg" alt="United Airlines Logo" class="logo">
+                <div>
+                    <h3>Associate Analyst - United Airlines</h3>
+                    <p>Nov '20 - Sep '22 | @Airport Operations Team</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
 
+ <!-- TEST SEC ends -->
 							
 							
 								<!-- Section -->
@@ -430,17 +551,17 @@
 												<a href="#" class="image"><img src="images/ephanti.jpeg" alt="" class="uniform-image"/></a>
 												<h3><strong>AI Engineer</strong></h3>
 												<p class="company-name">Ephanti</p>
-												<p>Aug'24 - Present <br>
+												<p>Aug'24 - Present; Milpitas, CA <br>
 												@Maven Assist Team</p>
 												<ul class="actions">
 													<!-- <li><a href="#" class="button">More</a></li> -->
-													<li><a href="#" class="button" onclick="openModal(); return false;">More</a></li>
+													<li><a href="#" class="button" onclick="openEModal(); return false;">More</a></li>
 												</ul>
 
 												<!-- Modal Structure -->
 												<div id="EModal" class="modal">
 													<div class="modal-content">
-														<span class="close" onclick="closeModal()">&times;</span>
+														<span class="close" onclick="closeEModal()">&times;</span>
 														<h2>AI Engineer - Ephanti</h2>
 														<p><strong>Location:</strong> Milpitas, CA</p>
 														<p><strong>Duration:</strong> Aug'24 - Present</p>
