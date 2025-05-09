@@ -476,11 +476,10 @@
 									</header>
 									<style>
 										.timeline-bg {
-											background: linear-gradient(135deg, #181c2f 0%, #232946 100%);
-											padding: 60px 0;
-											border-radius: 24px;
+											background: #f5f5f5;
+											padding: 60px 0 40px 0;
+											border-radius: 18px;
 											margin-bottom: 40px;
-											box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 										}
 										.timeline-container {
 											position: relative;
@@ -491,20 +490,15 @@
 										.timeline-container::after {
 											content: '';
 											position: absolute;
-											width: 8px;
-											background: linear-gradient(180deg, #00eaff 0%, #7f53ff 100%);
+											width: 6px;
+											background: #d32f2f;
 											top: 0;
 											bottom: 0;
 											left: 50%;
-											margin-left: -4px;
-											border-radius: 8px;
-											box-shadow: 0 0 24px #00eaff99, 0 0 48px #7f53ff44;
+											margin-left: -3px;
+											border-radius: 3px;
+											box-shadow: 0 0 12px #d32f2f33;
 											z-index: 0;
-											animation: timeline-glow 2s infinite alternate;
-										}
-										@keyframes timeline-glow {
-											0% { box-shadow: 0 0 24px #00eaff99, 0 0 48px #7f53ff44; }
-											100% { box-shadow: 0 0 48px #00eaffcc, 0 0 96px #7f53ff88; }
 										}
 										.timeline-item {
 											padding: 20px 40px;
@@ -524,137 +518,123 @@
 										.timeline-item::after {
 											content: '';
 											position: absolute;
-											width: 38px;
-											height: 38px;
-											background: rgba(255,255,255,0.1);
-											border: 4px solid #00eaff;
+											width: 28px;
+											height: 28px;
+											background: #fff;
+											border: 4px solid #d32f2f;
 											top: 50%;
 											transform: translateY(-50%);
 											border-radius: 50%;
 											z-index: 2;
-											box-shadow: 0 0 16px #00eaff99;
+											box-shadow: 0 0 8px #d32f2f22;
 										}
 										.timeline-item:nth-child(odd)::after {
-											right: -19px;
+											right: -14px;
 										}
 										.timeline-item:nth-child(even)::after {
-											left: -19px;
+											left: -14px;
 										}
 										.company-logo {
-											width: 64px;
-											height: 64px;
+											width: 54px;
+											height: 54px;
 											border-radius: 50%;
 											position: absolute;
 											top: 50%;
 											background: #fff;
 											object-fit: cover;
-											box-shadow: 0 0 24px #00eaff99, 0 0 8px #fff;
-											border: 3px solid #7f53ff;
+											box-shadow: 0 2px 8px #d32f2f22;
+											border: 2.5px solid #d32f2f;
 											transform: translateY(-50%);
 											z-index: 3;
 											transition: box-shadow 0.3s;
 										}
 										.timeline-item:nth-child(odd) .company-logo {
-											right: -32px;
+											right: -27px;
 										}
 										.timeline-item:nth-child(even) .company-logo {
-											left: -32px;
+											left: -27px;
 										}
 										.timeline-date {
 											position: absolute;
 											top: 50%;
 											transform: translateY(-50%);
 											font-weight: 700;
-											font-size: 1.1em;
-											color: #00eaff;
+											font-size: 1em;
+											color: #fff;
+											background: #d32f2f;
+											border-radius: 999px;
+											padding: 7px 22px;
+											box-shadow: 0 2px 8px #d32f2f22;
 											letter-spacing: 0.5px;
 											display: flex;
 											align-items: center;
-											gap: 8px;
 											z-index: 4;
-											text-shadow: 0 2px 8px #232946;
+											border: 2px solid #fff;
+											font-family: inherit;
 										}
 										.timeline-item:nth-child(odd) .timeline-date {
-											right: -180px;
+											right: -170px;
 											justify-content: flex-end;
 										}
 										.timeline-item:nth-child(even) .timeline-date {
-											left: -180px;
+											left: -170px;
 											justify-content: flex-start;
 										}
-										.timeline-date .date-icon {
-											font-size: 1.2em;
-											color: #7f53ff;
-											margin-right: 4px;
-										}
 										.timeline-content {
-											background: rgba(255,255,255,0.18);
-											box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
-											backdrop-filter: blur(8px);
-											-webkit-backdrop-filter: blur(8px);
-											border-radius: 18px;
-											padding: 32px 28px 24px 28px;
+											background: #fff;
+											box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.07);
+											border-radius: 14px;
+											padding: 28px 24px 20px 24px;
 											margin: 0 0 0 0;
 											display: inline-block;
-											min-width: 320px;
-											max-width: 420px;
-											border: 1.5px solid #e0e0e0;
+											min-width: 280px;
+											max-width: 400px;
+											border: 1.5px solid #eee;
 											position: relative;
 											z-index: 5;
 											text-align: left;
-											font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-											color: #232946;
+											font-family: inherit;
+											color: #232323;
 											transition: box-shadow 0.3s;
 										}
 										.timeline-content h3 {
-											font-size: 1.35em;
+											font-size: 1.2em;
 											font-weight: 800;
 											margin-bottom: 0.2em;
-											color: #181c2f;
+											color: #222;
 											letter-spacing: 0.5px;
-											display: flex;
-											align-items: center;
-											gap: 8px;
-										}
-										.timeline-content h3 .ai-icon {
-											font-size: 1.1em;
-											color: #00eaff;
-											margin-left: 4px;
-											animation: ai-glow 1.5s infinite alternate;
-										}
-										@keyframes ai-glow {
-											0% { text-shadow: 0 0 8px #00eaff99; }
-											100% { text-shadow: 0 0 16px #7f53ffcc; }
 										}
 										.timeline-content .company-name {
-											color: #7f53ff;
+											color: #d32f2f;
 											font-weight: 600;
 											margin-bottom: 0.5em;
 											font-size: 1.05em;
 										}
 										.timeline-content p {
-											color: #232946;
+											color: #444;
 											font-size: 1em;
 											margin-bottom: 0.5em;
 										}
 										.learn-more-btn {
 											display: inline-block;
-											padding: 10px 22px;
-											background: linear-gradient(90deg, #00eaff 0%, #7f53ff 100%);
+											padding: 8px 18px;
+											background: #d32f2f;
 											color: #fff;
 											font-weight: 700;
 											border: none;
-											border-radius: 8px;
+											border-radius: 7px;
 											font-size: 1em;
 											margin-top: 10px;
-											box-shadow: 0 2px 8px #7f53ff44;
+											box-shadow: 0 2px 8px #d32f2f22;
 											cursor: pointer;
 											transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
 											outline: none;
+											text-transform: uppercase;
+											letter-spacing: 1px;
 										}
 										.learn-more-btn:hover {
-											background: linear-gradient(90deg, #7f53ff 0%, #00eaff 100%);
-											box-shadow: 0 4px 16px #00eaff99;
+											background: #b71c1c;
+											box-shadow: 0 4px 16px #d32f2f33;
 											transform: translateY(-2px) scale(1.04);
 										}
 										@media screen and (max-width: 900px) {
@@ -671,11 +651,11 @@
 												justify-content: flex-start;
 											}
 											.company-logo, .timeline-item:nth-child(odd) .company-logo, .timeline-item:nth-child(even) .company-logo {
-												left: -32px !important;
+												left: -27px !important;
 												right: auto !important;
 											}
 											.timeline-container::after {
-												left: 24px;
+												left: 20px;
 												margin-left: 0;
 											}
 											.timeline-content {
@@ -687,50 +667,50 @@
 									<div class="timeline-bg">
 										<div class="timeline-container">
 											<div class="timeline-item">
-												<div class="timeline-date"><span class="date-icon">📅</span>Aug 2024 - Present</div>
+												<div class="timeline-date">Aug 2024 - Present</div>
 												<img src="images/ephanti.jpeg" alt="Ephanti" class="company-logo">
 												<div class="timeline-content">
-													<h3>AI Engineer <span class="ai-icon">🤖</span></h3>
+													<h3>AI Engineer</h3>
 													<div class="company-name">Ephanti</div>
 													<p>Milpitas, CA<br>@Maven Assist Team</p>
 													<button class="learn-more-btn" onclick="openEModal(); return false;">Learn More</button>
 												</div>
 											</div>
 											<div class="timeline-item">
-												<div class="timeline-date"><span class="date-icon">📅</span>Summer 2024</div>
+												<div class="timeline-date">Summer 2024</div>
 												<img src="images/nasa.jpeg" alt="NASA" class="company-logo">
 												<div class="timeline-content">
-													<h3>AI/ML Intern <span class="ai-icon">🤖</span></h3>
+													<h3>AI/ML Intern</h3>
 													<div class="company-name">NASA Ames Research Center</div>
 													<p>Mountain View, CA<br>@NASA Aeronautics Research Institute</p>
 													<a href="https://docs.google.com/presentation/d/14SlTD6gNFjg6Mvce0aRbDJAdBO5sYnRs/edit?usp=sharing&ouid=109890373911931743733&rtpof=true&sd=true" class="learn-more-btn">Learn More</a>
 												</div>
 											</div>
 											<div class="timeline-item">
-												<div class="timeline-date"><span class="date-icon">📅</span>Summer 2023</div>
+												<div class="timeline-date">Summer 2023</div>
 												<img src="images/nike.jpg" alt="Nike" class="company-logo">
 												<div class="timeline-content">
-													<h3>Graduate Data Science Intern <span class="ai-icon">🤖</span></h3>
+													<h3>Graduate Data Science Intern</h3>
 													<div class="company-name">Nike, Inc.</div>
 													<p>Beaverton, OR<br>@Merchant Financial Planning Team</p>
 													<button class="learn-more-btn" onclick="openModal(); return false;">Learn More</button>
 												</div>
 											</div>
 											<div class="timeline-item">
-												<div class="timeline-date"><span class="date-icon">📅</span>Jul 2020 - Sep 2022</div>
+												<div class="timeline-date">Jul 2020 - Sep 2022</div>
 												<img src="images/UA.jpeg" alt="United Airlines" class="company-logo">
 												<div class="timeline-content">
-													<h3>Associate Analyst <span class="ai-icon">🤖</span></h3>
+													<h3>Associate Analyst</h3>
 													<div class="company-name">United Airlines, Inc.</div>
 													<p>Delhi, India<br>@Airport Operations Team</p>
 													<button class="learn-more-btn" onclick="openUnitedModal(); return false;">Learn More</button>
 												</div>
 											</div>
 											<div class="timeline-item">
-												<div class="timeline-date"><span class="date-icon">📅</span>Summer 2019</div>
+												<div class="timeline-date">Summer 2019</div>
 												<img src="images/BS.png" alt="Birlasoft" class="company-logo">
 												<div class="timeline-content">
-													<h3>Analytics Intern <span class="ai-icon">🤖</span></h3>
+													<h3>Analytics Intern</h3>
 													<div class="company-name">Birlasoft, C.K. Birla Group</div>
 													<p>Delhi-NCR, India<br>@IT Transformation Team</p>
 													<button class="learn-more-btn" onclick="openBSModal(); return false;">Learn More</button>
@@ -1529,6 +1509,71 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+    <!-- Modals for timeline experience cards -->
+    <div id="EModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeEModal()">&times;</span>
+        <h2>AI Engineer - Ephanti</h2>
+        <p><strong>Location:</strong> Milpitas, CA</p>
+        <p><strong>Duration:</strong> Aug 2024 - Present</p>
+        <p><strong>Team:</strong> Maven AI Assist Team</p>
+        <p>I developed an AI-driven customer segmentation system by building a GPT-4-powered ReAct AI Agent using LlamaIndex, enabling real-time, dynamic querying of e-commerce data. This enhanced decision-making, improved customer interactions, and drove personalized engagement strategies.</p>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Graduate Data Science Intern - Nike, Inc.</h2>
+        <p><strong>Location:</strong> Beaverton, OR</p>
+        <p><strong>Duration:</strong> Summer 2023</p>
+        <p><strong>Team:</strong> Merchant Financial Planning Team</p>
+        <p>I leveraged a diverse range of advanced machine learning models, including LSTM, Vector Auto Regression, Dynamic Linear Model (DLT), BlockRNN, Exponential Smoothing, ARIMA, Holt-Winters, and Facebook Prophet, to conduct multivariate time series forecasting of Nike's Retail Sales Value in the NA Men's Footwear 3PW segment. By optimizing the models through techniques like Optuna & GridSearch, I achieved a 36% improvement in backtest accuracy, alongside a 6% WMAPE value, significantly enhancing the precision of our predictions and contributing to better decision-making in sales strategy.</p>
+      </div>
+    </div>
+    <div id="unitedModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeUnitedModal()">&times;</span>
+        <h2>Associate Analyst - United Airlines, Inc.</h2>
+        <p><strong>Location:</strong> Delhi, India</p>
+        <p><strong>Duration:</strong> Jul 2020 - Sep 2022</p>
+        <p><strong>Team:</strong> Airport Operations Team</p>
+        <p>As an Associate Analyst with United Airlines, I worked across 4 buckets namely, Data Engineering, Dashboarding, Story-telling with data, & Reporting. I spearheaded operational data initiatives at Newark Liberty International Airport, utilized extensive SQL for data analysis, and designed Spotfire-based BI dashboards utilized by over 20,000 employees across 300+ airports. My efforts resulted in a 5-point NPS boost and a 2-spot improvement in rankings YoY. I also improved reliability forecasting by 6% through predictive modeling and achieved 95% operational efficiency through Python automation.</p>
+      </div>
+    </div>
+    <div id="BSModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeBSModal()">&times;</span>
+        <h2>Analytics Intern - Birlasoft</h2>
+        <p><strong>Location:</strong> Delhi-NCR, India</p>
+        <p><strong>Duration:</strong> May 2019 - Aug 2019</p>
+        <p><strong>Team:</strong> Data Science Team</p>
+        <p>Improved forecast accuracy by 29% for Schlumberger's energy gap Proof of Concept (POC) using advanced machine learning models, including LSTM and Holt-Winters Smoothing, leading to more precise energy demand predictions. Additionally, performed a comprehensive health analysis of the IT portfolio, identifying key areas for optimization.</p>
+      </div>
+    </div>
+    <style>
+      .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
+      .modal-content { background-color: #fff; margin: 10% auto; padding: 20px; border-radius: 10px; width: 90%; max-width: 500px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; }
+      .close { color: #aaa; position: absolute; right: 20px; top: 10px; font-size: 28px; font-weight: bold; cursor: pointer; }
+      .close:hover, .close:focus { color: #d32f2f; text-decoration: none; cursor: pointer; }
+    </style>
+    <script>
+      function openEModal() { document.getElementById("EModal").style.display = "block"; }
+      function closeEModal() { document.getElementById("EModal").style.display = "none"; }
+      function openModal() { document.getElementById("myModal").style.display = "block"; }
+      function closeModal() { document.getElementById("myModal").style.display = "none"; }
+      function openUnitedModal() { document.getElementById("unitedModal").style.display = "block"; }
+      function closeUnitedModal() { document.getElementById("unitedModal").style.display = "none"; }
+      function openBSModal() { document.getElementById("BSModal").style.display = "block"; }
+      function closeBSModal() { document.getElementById("BSModal").style.display = "none"; }
+      // Close modal when clicking outside
+      window.onclick = function(event) {
+        ["EModal", "myModal", "unitedModal", "BSModal"].forEach(function(id) {
+          var modal = document.getElementById(id);
+          if (event.target == modal) { modal.style.display = "none"; }
+        });
+      }
+    </script>
 
 	</body>
 </html>
