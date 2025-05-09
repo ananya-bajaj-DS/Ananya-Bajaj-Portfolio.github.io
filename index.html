@@ -151,13 +151,13 @@
 												<style>
 													.frameworks-grid {
 														display: grid;
-														grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-														gap: 28px 32px;
+														grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+														gap: 18px 18px;
 														justify-items: center;
-														align-items: end;
+														align-items: center;
 														margin: 32px 0 0 0;
 														padding: 0 10px;
-														max-width: 700px;
+														max-width: 500px;
 														margin-left: auto;
 														margin-right: auto;
 													}
@@ -166,12 +166,12 @@
 														flex-direction: column;
 														align-items: center;
 														background: #fff;
-														border-radius: 14px;
+														border-radius: 12px;
 														box-shadow: 0 2px 8px #eee;
-														padding: 14px 10px 8px 10px;
+														padding: 6px;
 														transition: box-shadow 0.2s, transform 0.2s;
-														width: 100px;
-														height: 110px;
+														width: 64px;
+														height: 64px;
 														justify-content: center;
 													}
 													.framework-card:hover {
@@ -179,64 +179,45 @@
 														transform: scale(1.07);
 													}
 													.framework-logo {
-														width: 60px;
-														height: 60px;
+														width: 44px;
+														height: 44px;
 														object-fit: contain;
-														margin-bottom: 8px;
 														display: block;
-													}
-													.framework-label {
-														font-size: 0.98em;
-														color: #444;
-														text-align: center;
-														margin-top: 2px;
-														font-weight: 500;
 													}
 												</style>
 												<div class="frameworks-grid">
 													<div class="framework-card">
 														<img src="images/tensorflow.png" alt="TensorFlow" class="framework-logo">
-														<div class="framework-label">TensorFlow</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/theano.png" alt="Theano" class="framework-logo">
-														<div class="framework-label">Theano</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/Keras.png" alt="Keras" class="framework-logo">
-														<div class="framework-label">Keras</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/Pytorch.svg" alt="PyTorch" class="framework-logo">
-														<div class="framework-label">PyTorch</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/matplotlib.png" alt="Matplotlib" class="framework-logo">
-														<div class="framework-label">Matplotlib</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/numpy.png" alt="NumPy" class="framework-logo">
-														<div class="framework-label">NumPy</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/pandas.png" alt="Pandas" class="framework-logo">
-														<div class="framework-label">Pandas</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/darts.jpeg" alt="Darts" class="framework-logo">
-														<div class="framework-label">Darts</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/pyspark.jpeg" alt="PySpark" class="framework-logo">
-														<div class="framework-label">PySpark</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/scikit-learn.png" alt="Scikit-learn" class="framework-logo">
-														<div class="framework-label">Scikit-learn</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/seaborn.png" alt="Seaborn" class="framework-logo">
-														<div class="framework-label">Seaborn</div>
 													</div>
 												</div>
 											</div>
@@ -468,9 +449,7 @@
 											max-width: 1100px;
 											margin: 0 auto;
 											padding: 40px 0;
-											display: flex;
-											flex-direction: column;
-											gap: 0;
+											display: block;
 										}
 										.timeline-container::after {
 											content: '';
@@ -492,14 +471,12 @@
 											100% { box-shadow: 0 0 24px 4px #f56a6a77; }
 										}
 										.timeline-item {
-											padding: 20px 40px;
+											padding: 40px 40px; /* increased vertical spacing */
 											position: relative;
 											width: 50%;
 											box-sizing: border-box;
 											z-index: 1;
-											display: flex;
-											flex-direction: column;
-											align-items: stretch;
+											display: block;
 										}
 										.timeline-item:nth-child(odd) {
 											left: 0;
@@ -529,17 +506,21 @@
 										.timeline-item:nth-child(even)::after {
 											left: -44px;
 										}
-										.company-logo {
+										.timeline-item .company-logo {
 											width: 80px;
 											height: 80px;
 											border-radius: 50%;
 											position: absolute;
 											top: 50%;
+											left: 50%;
+											transform: translate(-50%, -50%);
 											background: #fff;
-											object-fit: cover;
+											object-fit: contain;
+											display: flex;
+											align-items: center;
+											justify-content: center;
 											box-shadow: 0 0 24px 4px #f56a6a55;
 											border: 3px solid #f56a6a;
-											transform: translateY(-50%);
 											z-index: 3;
 											transition: box-shadow 0.3s, transform 0.2s;
 										}
@@ -549,7 +530,15 @@
 										.timeline-item:nth-child(even) .company-logo {
 											left: -40px;
 										}
-										.company-logo:hover {
+										.timeline-item .company-logo img {
+											width: 64px;
+											height: 64px;
+											object-fit: contain;
+											display: block;
+											margin: auto;
+											border-radius: 50%;
+										}
+										.timeline-item .company-logo:hover {
 											box-shadow: 0 0 36px 8px #f56a6a99;
 											transform: translateY(-50%) scale(1.07);
 										}
@@ -584,9 +573,7 @@
 											border-radius: 14px;
 											padding: 28px 24px 20px 24px;
 											margin: 0 0 0 0;
-											display: flex;
-											flex-direction: column;
-											justify-content: space-between;
+											display: inline-block;
 											min-width: 280px;
 											max-width: 400px;
 											border: 1.5px solid #eee;
@@ -597,7 +584,6 @@
 											color: #232323;
 											transition: box-shadow 0.3s, transform 0.2s;
 											box-sizing: border-box;
-											height: 100%;
 										}
 										.timeline-content:hover {
 											box-shadow: 0 8px 32px 0 #f56a6a22;
@@ -648,9 +634,7 @@
 												width: 100%;
 												left: 0 !important;
 												text-align: left;
-												display: flex;
-												flex-direction: column;
-												align-items: stretch;
+												display: block;
 											}
 											.timeline-date, .timeline-item:nth-child(odd) .timeline-date, .timeline-item:nth-child(even) .timeline-date {
 												left: 120px !important;
@@ -669,7 +653,6 @@
 											.timeline-content {
 												min-width: 0;
 												max-width: 100%;
-												height: 100%;
 											}
 										}
 										.timeline-item, .company-logo, .timeline-content {
@@ -709,7 +692,6 @@
 										<div class="timeline-container">
 											<div class="timeline-item">
 												<div class="timeline-date">Aug 2024 - Present</div>
-												<img src="images/ephanti.jpeg" alt="Ephanti" class="company-logo">
 												<div class="timeline-content">
 													<h3>AI Engineer</h3>
 													<div class="company-name">Ephanti</div>
@@ -719,7 +701,6 @@
 											</div>
 											<div class="timeline-item">
 												<div class="timeline-date">Summer 2024</div>
-												<img src="images/nasa.jpeg" alt="NASA" class="company-logo">
 												<div class="timeline-content">
 													<h3>AI/ML Intern</h3>
 													<div class="company-name">NASA Ames Research Center</div>
@@ -729,7 +710,6 @@
 											</div>
 											<div class="timeline-item">
 												<div class="timeline-date">Summer 2023</div>
-												<img src="images/nike.jpg" alt="Nike" class="company-logo">
 												<div class="timeline-content">
 													<h3>Graduate Data Science Intern</h3>
 													<div class="company-name">Nike, Inc.</div>
@@ -739,7 +719,6 @@
 											</div>
 											<div class="timeline-item">
 												<div class="timeline-date">Jul 2020 - Sep 2022</div>
-												<img src="images/UA.jpeg" alt="United Airlines" class="company-logo">
 												<div class="timeline-content">
 													<h3>Associate Analyst</h3>
 													<div class="company-name">United Airlines, Inc.</div>
@@ -749,7 +728,6 @@
 											</div>
 											<div class="timeline-item">
 												<div class="timeline-date">Summer 2019</div>
-												<img src="images/BS.png" alt="Birlasoft" class="company-logo">
 												<div class="timeline-content">
 													<h3>Analytics Intern</h3>
 													<div class="company-name">Birlasoft, C.K. Birla Group</div>
