@@ -475,240 +475,266 @@
 										<h2>Professional Experience</h2>
 									</header>
 									<style>
+										.timeline-bg {
+											background: linear-gradient(135deg, #181c2f 0%, #232946 100%);
+											padding: 60px 0;
+											border-radius: 24px;
+											margin-bottom: 40px;
+											box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+										}
 										.timeline-container {
 											position: relative;
-											max-width: 1200px;
+											max-width: 1100px;
 											margin: 0 auto;
 											padding: 40px 0;
 										}
-
 										.timeline-container::after {
 											content: '';
 											position: absolute;
-											width: 6px;
-											background: linear-gradient(to bottom, #d32f2f, #ff6b6b);
+											width: 8px;
+											background: linear-gradient(180deg, #00eaff 0%, #7f53ff 100%);
 											top: 0;
 											bottom: 0;
 											left: 50%;
-											margin-left: -3px;
-											border-radius: 3px;
+											margin-left: -4px;
+											border-radius: 8px;
+											box-shadow: 0 0 24px #00eaff99, 0 0 48px #7f53ff44;
+											z-index: 0;
+											animation: timeline-glow 2s infinite alternate;
 										}
-
+										@keyframes timeline-glow {
+											0% { box-shadow: 0 0 24px #00eaff99, 0 0 48px #7f53ff44; }
+											100% { box-shadow: 0 0 48px #00eaffcc, 0 0 96px #7f53ff88; }
+										}
 										.timeline-item {
-											padding: 10px 40px;
+											padding: 20px 40px;
 											position: relative;
 											width: 50%;
 											box-sizing: border-box;
+											z-index: 1;
 										}
-
+										.timeline-item:nth-child(odd) {
+											left: 0;
+											text-align: right;
+										}
+										.timeline-item:nth-child(even) {
+											left: 50%;
+											text-align: left;
+										}
 										.timeline-item::after {
 											content: '';
 											position: absolute;
-											width: 25px;
-											height: 25px;
-											right: -17px;
-											background-color: white;
-											border: 4px solid #d32f2f;
-											top: 15px;
+											width: 38px;
+											height: 38px;
+											background: rgba(255,255,255,0.1);
+											border: 4px solid #00eaff;
+											top: 50%;
+											transform: translateY(-50%);
 											border-radius: 50%;
-											z-index: 1;
+											z-index: 2;
+											box-shadow: 0 0 16px #00eaff99;
 										}
-
-										.timeline-item:nth-child(even) {
-											left: 50%;
+										.timeline-item:nth-child(odd)::after {
+											right: -19px;
 										}
-
 										.timeline-item:nth-child(even)::after {
-											left: -16px;
+											left: -19px;
 										}
-
-										.timeline-content {
-											padding: 20px;
-											background-color: white;
-											position: relative;
-											border-radius: 10px;
-											box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-											transition: transform 0.3s ease;
+										.company-logo {
+											width: 64px;
+											height: 64px;
+											border-radius: 50%;
+											position: absolute;
+											top: 50%;
+											background: #fff;
+											object-fit: cover;
+											box-shadow: 0 0 24px #00eaff99, 0 0 8px #fff;
+											border: 3px solid #7f53ff;
+											transform: translateY(-50%);
+											z-index: 3;
+											transition: box-shadow 0.3s;
 										}
-
-										.timeline-content:hover {
-											transform: translateY(-5px);
+										.timeline-item:nth-child(odd) .company-logo {
+											right: -32px;
 										}
-
+										.timeline-item:nth-child(even) .company-logo {
+											left: -32px;
+										}
 										.timeline-date {
 											position: absolute;
 											top: 50%;
 											transform: translateY(-50%);
-											width: 120px;
-											text-align: center;
-											font-weight: bold;
-											color: #d32f2f;
+											font-weight: 700;
+											font-size: 1.1em;
+											color: #00eaff;
+											letter-spacing: 0.5px;
+											display: flex;
+											align-items: center;
+											gap: 8px;
+											z-index: 4;
+											text-shadow: 0 2px 8px #232946;
 										}
-
 										.timeline-item:nth-child(odd) .timeline-date {
-											right: -170px;
+											right: -180px;
+											justify-content: flex-end;
 										}
-
 										.timeline-item:nth-child(even) .timeline-date {
-											left: -170px;
+											left: -180px;
+											justify-content: flex-start;
 										}
-
-										.company-logo {
-											width: 60px;
-											height: 60px;
-											border-radius: 50%;
-											position: absolute;
-											top: 50%;
-											transform: translateY(-50%);
-											z-index: 2;
+										.timeline-date .date-icon {
+											font-size: 1.2em;
+											color: #7f53ff;
+											margin-right: 4px;
 										}
-
-										.timeline-item:nth-child(odd) .company-logo {
-											right: -30px;
+										.timeline-content {
+											background: rgba(255,255,255,0.18);
+											box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
+											backdrop-filter: blur(8px);
+											-webkit-backdrop-filter: blur(8px);
+											border-radius: 18px;
+											padding: 32px 28px 24px 28px;
+											margin: 0 0 0 0;
+											display: inline-block;
+											min-width: 320px;
+											max-width: 420px;
+											border: 1.5px solid #e0e0e0;
+											position: relative;
+											z-index: 5;
+											text-align: left;
+											font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+											color: #232946;
+											transition: box-shadow 0.3s;
 										}
-
-										.timeline-item:nth-child(even) .company-logo {
-											left: -30px;
+										.timeline-content h3 {
+											font-size: 1.35em;
+											font-weight: 800;
+											margin-bottom: 0.2em;
+											color: #181c2f;
+											letter-spacing: 0.5px;
+											display: flex;
+											align-items: center;
+											gap: 8px;
 										}
-
+										.timeline-content h3 .ai-icon {
+											font-size: 1.1em;
+											color: #00eaff;
+											margin-left: 4px;
+											animation: ai-glow 1.5s infinite alternate;
+										}
+										@keyframes ai-glow {
+											0% { text-shadow: 0 0 8px #00eaff99; }
+											100% { text-shadow: 0 0 16px #7f53ffcc; }
+										}
+										.timeline-content .company-name {
+											color: #7f53ff;
+											font-weight: 600;
+											margin-bottom: 0.5em;
+											font-size: 1.05em;
+										}
+										.timeline-content p {
+											color: #232946;
+											font-size: 1em;
+											margin-bottom: 0.5em;
+										}
 										.learn-more-btn {
 											display: inline-block;
-											padding: 8px 16px;
-											background-color: #d32f2f;
-											color: white;
-											text-decoration: none;
-											border-radius: 5px;
+											padding: 10px 22px;
+											background: linear-gradient(90deg, #00eaff 0%, #7f53ff 100%);
+											color: #fff;
+											font-weight: 700;
+											border: none;
+											border-radius: 8px;
+											font-size: 1em;
 											margin-top: 10px;
-											transition: background-color 0.3s ease;
-										}
-
-										.learn-more-btn:hover {
-											background-color: #b71c1c;
-										}
-
-										.modal {
-											display: none;
-											position: fixed;
-											z-index: 1000;
-											left: 0;
-											top: 0;
-											width: 100%;
-											height: 100%;
-											background-color: rgba(0,0,0,0.5);
-										}
-
-										.modal-content {
-											background-color: white;
-											margin: 15% auto;
-											padding: 20px;
-											border-radius: 10px;
-											width: 80%;
-											max-width: 600px;
-											position: relative;
-										}
-
-										.close {
-											position: absolute;
-											right: 20px;
-											top: 10px;
-											font-size: 28px;
-											font-weight: bold;
+											box-shadow: 0 2px 8px #7f53ff44;
 											cursor: pointer;
+											transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+											outline: none;
 										}
-
-										@media screen and (max-width: 768px) {
-											.timeline-container::after {
-												left: 31px;
-											}
-											
-											.timeline-item {
+										.learn-more-btn:hover {
+											background: linear-gradient(90deg, #7f53ff 0%, #00eaff 100%);
+											box-shadow: 0 4px 16px #00eaff99;
+											transform: translateY(-2px) scale(1.04);
+										}
+										@media screen and (max-width: 900px) {
+											.timeline-item, .timeline-item:nth-child(even), .timeline-item:nth-child(odd) {
 												width: 100%;
-												padding-left: 70px;
-												padding-right: 25px;
+												left: 0 !important;
+												text-align: left;
 											}
-											
-											.timeline-item::after {
-												left: 15px;
-											}
-											
-											.timeline-item:nth-child(even) {
-												left: 0;
-											}
-											
-											.timeline-date {
+											.timeline-date, .timeline-item:nth-child(odd) .timeline-date, .timeline-item:nth-child(even) .timeline-date {
+												left: 0 !important;
+												right: auto !important;
+												top: -40px;
 												position: relative;
-												top: 0;
-												transform: none;
-												width: 100%;
-												margin-bottom: 10px;
+												justify-content: flex-start;
 											}
-											
-											.timeline-item:nth-child(odd) .timeline-date,
-											.timeline-item:nth-child(even) .timeline-date {
-												left: 0;
-												right: auto;
+											.company-logo, .timeline-item:nth-child(odd) .company-logo, .timeline-item:nth-child(even) .company-logo {
+												left: -32px !important;
+												right: auto !important;
 											}
-											
-											.company-logo {
-												left: 0;
-												right: auto;
+											.timeline-container::after {
+												left: 24px;
+												margin-left: 0;
+											}
+											.timeline-content {
+												min-width: 0;
+												max-width: 100%;
 											}
 										}
 									</style>
-
-									<div class="timeline-container">
-										<div class="timeline-item">
-											<div class="timeline-date">Aug 2024 - Present</div>
-											<img src="images/ephanti.jpeg" alt="Ephanti" class="company-logo">
-											<div class="timeline-content">
-												<h3>AI Engineer</h3>
-												<p class="company-name">Ephanti</p>
-												<p>Milpitas, CA<br>@Maven Assist Team</p>
-												<a href="#" class="learn-more-btn" onclick="openEModal(); return false;">Learn More</a>
+									<div class="timeline-bg">
+										<div class="timeline-container">
+											<div class="timeline-item">
+												<div class="timeline-date"><span class="date-icon">📅</span>Aug 2024 - Present</div>
+												<img src="images/ephanti.jpeg" alt="Ephanti" class="company-logo">
+												<div class="timeline-content">
+													<h3>AI Engineer <span class="ai-icon">🤖</span></h3>
+													<div class="company-name">Ephanti</div>
+													<p>Milpitas, CA<br>@Maven Assist Team</p>
+													<button class="learn-more-btn" onclick="openEModal(); return false;">Learn More</button>
+												</div>
 											</div>
-										</div>
-
-										<div class="timeline-item">
-											<div class="timeline-date">Summer 2024</div>
-											<img src="images/nasa.jpeg" alt="NASA" class="company-logo">
-											<div class="timeline-content">
-												<h3>AI/ML Intern</h3>
-												<p class="company-name">NASA Ames Research Center</p>
-												<p>Mountain View, CA<br>@NASA Aeronautics Research Institute</p>
-												<a href="https://docs.google.com/presentation/d/14SlTD6gNFjg6Mvce0aRbDJAdBO5sYnRs/edit?usp=sharing&ouid=109890373911931743733&rtpof=true&sd=true" class="learn-more-btn">Learn More</a>
+											<div class="timeline-item">
+												<div class="timeline-date"><span class="date-icon">📅</span>Summer 2024</div>
+												<img src="images/nasa.jpeg" alt="NASA" class="company-logo">
+												<div class="timeline-content">
+													<h3>AI/ML Intern <span class="ai-icon">🤖</span></h3>
+													<div class="company-name">NASA Ames Research Center</div>
+													<p>Mountain View, CA<br>@NASA Aeronautics Research Institute</p>
+													<a href="https://docs.google.com/presentation/d/14SlTD6gNFjg6Mvce0aRbDJAdBO5sYnRs/edit?usp=sharing&ouid=109890373911931743733&rtpof=true&sd=true" class="learn-more-btn">Learn More</a>
+												</div>
 											</div>
-										</div>
-
-										<div class="timeline-item">
-											<div class="timeline-date">Summer 2023</div>
-											<img src="images/nike.jpg" alt="Nike" class="company-logo">
-											<div class="timeline-content">
-												<h3>Graduate Data Science Intern</h3>
-												<p class="company-name">Nike, Inc.</p>
-												<p>Beaverton, OR<br>@Merchant Financial Planning Team</p>
-												<a href="#" class="learn-more-btn" onclick="openModal(); return false;">Learn More</a>
+											<div class="timeline-item">
+												<div class="timeline-date"><span class="date-icon">📅</span>Summer 2023</div>
+												<img src="images/nike.jpg" alt="Nike" class="company-logo">
+												<div class="timeline-content">
+													<h3>Graduate Data Science Intern <span class="ai-icon">🤖</span></h3>
+													<div class="company-name">Nike, Inc.</div>
+													<p>Beaverton, OR<br>@Merchant Financial Planning Team</p>
+													<button class="learn-more-btn" onclick="openModal(); return false;">Learn More</button>
+												</div>
 											</div>
-										</div>
-
-										<div class="timeline-item">
-											<div class="timeline-date">Jul 2020 - Sep 2022</div>
-											<img src="images/UA.jpeg" alt="United Airlines" class="company-logo">
-											<div class="timeline-content">
-												<h3>Associate Analyst</h3>
-												<p class="company-name">United Airlines, Inc.</p>
-												<p>Delhi, India<br>@Airport Operations Team</p>
-												<a href="#" class="learn-more-btn" onclick="openUnitedModal(); return false;">Learn More</a>
+											<div class="timeline-item">
+												<div class="timeline-date"><span class="date-icon">📅</span>Jul 2020 - Sep 2022</div>
+												<img src="images/UA.jpeg" alt="United Airlines" class="company-logo">
+												<div class="timeline-content">
+													<h3>Associate Analyst <span class="ai-icon">🤖</span></h3>
+													<div class="company-name">United Airlines, Inc.</div>
+													<p>Delhi, India<br>@Airport Operations Team</p>
+													<button class="learn-more-btn" onclick="openUnitedModal(); return false;">Learn More</button>
+												</div>
 											</div>
-										</div>
-
-										<div class="timeline-item">
-											<div class="timeline-date">Summer 2019</div>
-											<img src="images/BS.png" alt="Birlasoft" class="company-logo">
-											<div class="timeline-content">
-												<h3>Analytics Intern</h3>
-												<p class="company-name">Birlasoft, C.K. Birla Group</p>
-												<p>Delhi-NCR, India<br>@IT Transformation Team</p>
-												<a href="#" class="learn-more-btn" onclick="openBSModal(); return false;">Learn More</a>
+											<div class="timeline-item">
+												<div class="timeline-date"><span class="date-icon">📅</span>Summer 2019</div>
+												<img src="images/BS.png" alt="Birlasoft" class="company-logo">
+												<div class="timeline-content">
+													<h3>Analytics Intern <span class="ai-icon">🤖</span></h3>
+													<div class="company-name">Birlasoft, C.K. Birla Group</div>
+													<p>Delhi-NCR, India<br>@IT Transformation Team</p>
+													<button class="learn-more-btn" onclick="openBSModal(); return false;">Learn More</button>
+												</div>
 											</div>
 										</div>
 									</div>
