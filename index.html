@@ -14,7 +14,7 @@
 			/* Dark Space Theme */
 			:root {
 				--space-bg: #0a0a1a;
-				--space-text: #e0e0ff;
+				--space-text: #ffffff;
 				--space-accent: #4a90e2;
 				--space-glow: #6b8aff;
 				--space-card: rgba(16, 16, 32, 0.8);
@@ -122,32 +122,73 @@
 				border: 1px solid rgba(107, 138, 255, 0.2);
 			}
 
-			.timeline-content::after {
-				content: '';
+			/* Company logo styling */
+			.timeline-logo {
 				position: absolute;
-				width: 20px;
-				height: 20px;
-				right: -10px;
-				background: var(--space-accent);
-				border: 4px solid var(--space-bg);
-				top: 15px;
+				width: 60px;
+				height: 60px;
 				border-radius: 50%;
+				top: 50%;
+				transform: translateY(-50%);
+				background: var(--space-bg);
+				border: 3px solid var(--space-accent);
+				overflow: hidden;
+				z-index: 2;
+			}
+
+			.timeline-logo img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.timeline-item .timeline-logo {
+				right: -30px;
+			}
+
+			.timeline-item:nth-child(even) .timeline-logo {
+				left: -30px;
+			}
+
+			/* Date styling */
+			.timeline-date {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				background: var(--space-accent);
+				color: white;
+				padding: 8px 15px;
+				border-radius: 20px;
+				font-size: 0.9em;
+				white-space: nowrap;
 				z-index: 1;
 			}
 
-			.timeline-item:nth-child(even) .timeline-content::after {
-				left: -10px;
+			.timeline-item .timeline-date {
+				right: -180px;
 			}
 
-			/* AI-powered animations */
-			@keyframes float {
-				0% { transform: translateY(0px); }
-				50% { transform: translateY(-10px); }
-				100% { transform: translateY(0px); }
+			.timeline-item:nth-child(even) .timeline-date {
+				left: -180px;
 			}
 
-			.timeline-content {
-				animation: float 6s ease-in-out infinite;
+			/* Content styling */
+			.timeline-content h3 {
+				color: var(--space-text);
+				margin-bottom: 10px;
+				font-size: 1.2em;
+			}
+
+			.timeline-content p {
+				color: var(--space-text);
+				margin: 5px 0;
+				opacity: 0.9;
+			}
+
+			.company-name {
+				color: var(--space-accent) !important;
+				font-weight: bold;
+				margin-bottom: 10px;
 			}
 
 			/* Responsive design */
@@ -166,9 +207,31 @@
 					left: 0;
 				}
 
-				.timeline-content::after {
-					left: -10px;
+				.timeline-logo {
+					left: -30px !important;
+					right: auto !important;
 				}
+
+				.timeline-date {
+					position: relative;
+					left: 0 !important;
+					right: auto !important;
+					top: 0 !important;
+					transform: none !important;
+					margin-bottom: 10px;
+					display: inline-block;
+				}
+			}
+
+			/* AI-powered animations */
+			@keyframes float {
+				0% { transform: translateY(0px); }
+				50% { transform: translateY(-10px); }
+				100% { transform: translateY(0px); }
+			}
+
+			.timeline-content {
+				animation: float 6s ease-in-out infinite;
 			}
 		</style>
 	</head>
@@ -520,51 +583,61 @@
 									</header>
 									<div class="timeline">
 										<div class="timeline-item">
+											<div class="timeline-logo">
+												<img src="images/ephanti.jpeg" alt="Ephanti Logo">
+											</div>
+											<div class="timeline-date">Aug'24 - Present</div>
 											<div class="timeline-content glow">
-												<img src="images/ephanti.jpeg" alt="Ephanti Logo" style="width: 60px; height: 60px; border-radius: 8px; margin-bottom: 10px;">
 												<h3>AI Engineer - Ephanti</h3>
-												<p class="company-name">Aug'24 - Present</p>
-												<p>Milpitas, CA | @Maven Assist Team</p>
+												<p class="company-name">Milpitas, CA | @Maven Assist Team</p>
 												<p>Developed an AI-driven customer segmentation system by building a GPT-4-powered ReAct AI Agent using LlamaIndex, enabling real-time, dynamic querying of e-commerce data.</p>
 											</div>
 										</div>
 
 										<div class="timeline-item">
+											<div class="timeline-logo">
+												<img src="images/nasa.jpeg" alt="NASA Logo">
+											</div>
+											<div class="timeline-date">Summer '24</div>
 											<div class="timeline-content glow">
-												<img src="images/nasa.jpeg" alt="NASA Logo" style="width: 60px; height: 60px; border-radius: 8px; margin-bottom: 10px;">
 												<h3>AI/ML Intern - NASA Ames</h3>
-												<p class="company-name">Summer '24</p>
-												<p>Mountain View, CA | @NASA Aeronautics Research Institute</p>
+												<p class="company-name">Mountain View, CA | @NASA Aeronautics Research Institute</p>
 												<p>NASA OStem Internship - Contributing to innovative projects within the NASA Aeronautics Research Institute.</p>
 											</div>
 										</div>
 
 										<div class="timeline-item">
+											<div class="timeline-logo">
+												<img src="images/nike.jpg" alt="Nike Logo">
+											</div>
+											<div class="timeline-date">Summer '23</div>
 											<div class="timeline-content glow">
-												<img src="images/nike.jpg" alt="Nike Logo" style="width: 60px; height: 60px; border-radius: 8px; margin-bottom: 10px;">
 												<h3>Graduate Data Science Intern - Nike</h3>
-												<p class="company-name">Summer '23</p>
-												<p>Beaverton, OR | @Merchant Financial Planning Team</p>
+												<p class="company-name">Beaverton, OR | @Merchant Financial Planning Team</p>
 												<p>Leveraged advanced ML models for multivariate time series forecasting, achieving 36% improvement in backtest accuracy and 6% WMAPE value.</p>
 											</div>
 										</div>
 
 										<div class="timeline-item">
+											<div class="timeline-logo">
+												<img src="images/UA.jpeg" alt="United Airlines Logo">
+											</div>
+											<div class="timeline-date">Jul '20 - Sep '22</div>
 											<div class="timeline-content glow">
-												<img src="images/UA.jpeg" alt="United Airlines Logo" style="width: 60px; height: 60px; border-radius: 8px; margin-bottom: 10px;">
 												<h3>Associate Analyst - United Airlines</h3>
-												<p class="company-name">Jul '20 - Sep '22</p>
-												<p>Delhi, India | @Airport Operations Team</p>
+												<p class="company-name">Delhi, India | @Airport Operations Team</p>
 												<p>Spearheaded operational data initiatives, designed BI dashboards for 20,000+ employees, achieved 5-point NPS boost and 6% improvement in reliability forecasting.</p>
 											</div>
 										</div>
 
 										<div class="timeline-item">
+											<div class="timeline-logo">
+												<img src="images/BS.png" alt="Birlasoft Logo">
+											</div>
+											<div class="timeline-date">Summer '19</div>
 											<div class="timeline-content glow">
-												<img src="images/BS.png" alt="Birlasoft Logo" style="width: 60px; height: 60px; border-radius: 8px; margin-bottom: 10px;">
 												<h3>Analytics Intern - Birlasoft</h3>
-												<p class="company-name">Summer '19</p>
-												<p>Delhi-NCR, India | @IT Transformation Team</p>
+												<p class="company-name">Delhi-NCR, India | @IT Transformation Team</p>
 												<p>Improved forecast accuracy by 29% using LSTM and Holt-Winters Smoothing for energy demand predictions.</p>
 											</div>
 										</div>
