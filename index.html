@@ -11,6 +11,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
 		<style>
+			:root {
+				--space-bg: #070a1a;
+				--space-bg2: #10132a;
+				--space-text: #eaf6fb;
+				--space-accent: #4ad1ff;
+				--space-glow: #6b8aff;
+				--space-card: rgba(20, 24, 48, 0.92);
+			}
+
 			/* CSS Reset */
 			html, body, div, span, applet, object, iframe,
 			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -40,14 +49,51 @@
 				color: var(--space-text);
 				font-family: 'Segoe UI', Arial, sans-serif;
 				min-height: 100vh;
+				position: relative;
+				overflow-x: hidden;
 			}
 
-			/* Layout */
+			.stars {
+				position: fixed;
+				top: 0; left: 0; width: 100vw; height: 100vh;
+				z-index: 0;
+				pointer-events: none;
+			}
+			.star {
+				position: absolute;
+				background: white;
+				border-radius: 50%;
+				opacity: 0.7;
+				animation: twinkle 3s infinite;
+			}
+			@keyframes twinkle {
+				0%, 100% { opacity: 0.3; }
+				50% { opacity: 1; }
+			}
+
 			#wrapper {
 				display: flex;
 				min-height: 100vh;
 				width: 100vw;
+				position: relative;
+				z-index: 1;
 			}
+
+			#sidebar {
+				width: 320px;
+				background: rgba(20, 24, 48, 0.98);
+				border-right: 2px solid var(--space-glow);
+				box-shadow: 0 0 32px 0 var(--space-glow);
+				color: var(--space-text);
+				z-index: 10;
+				position: relative;
+				min-height: 100vh;
+				backdrop-filter: blur(4px);
+			}
+			#sidebar .inner {
+				padding: 30px 20px;
+			}
+
 			#main {
 				flex: 1 1 0;
 				background: transparent;
@@ -59,18 +105,7 @@
 				margin: 0 auto;
 				padding: 40px 20px 40px 20px;
 			}
-			#sidebar {
-				width: 320px;
-				background: rgba(20, 20, 40, 0.98);
-				box-shadow: 2px 0 20px 0 rgba(74,144,226,0.08);
-				color: var(--space-text);
-				z-index: 10;
-				position: relative;
-				min-height: 100vh;
-			}
-			#sidebar .inner {
-				padding: 30px 20px;
-			}
+
 			@media (max-width: 1100px) {
 				#main .inner { padding: 30px 5vw 30px 5vw; }
 				#sidebar { width: 220px; }
@@ -85,10 +120,10 @@
 				#sidebar .inner { padding: 10px 5px; }
 			}
 
-			/* Headings */
 			h1, h2, h3, h4, h5, h6 {
 				color: #fff;
 				font-weight: bold;
+				text-shadow: 0 0 8px var(--space-glow);
 				margin-bottom: 0.5em;
 				letter-spacing: 0.01em;
 			}
@@ -96,23 +131,22 @@
 			h2 { font-size: 1.6em; }
 			h3 { font-size: 1.2em; }
 
-			/* Paragraphs and lists */
 			p, ul, ol, li {
-				color: #e0e0ff;
-				font-size: 1.05em;
+				color: #eaf6fb;
+				font-size: 1.08em;
 				margin-bottom: 0.7em;
 			}
 			ul, ol { margin-left: 1.5em; }
 
 			/* Links */
 			a {
-				color: #4a90e2;
-				text-decoration: underline;
+				color: var(--space-accent);
+				text-shadow: 0 0 8px var(--space-glow);
 				transition: color 0.2s, text-shadow 0.2s;
 			}
 			a:hover, a:focus {
-				color: #6b8aff;
-				text-shadow: 0 0 8px #6b8aff;
+				color: #fff;
+				text-shadow: 0 0 16px var(--space-accent);
 			}
 
 			/* Sidebar menu */
@@ -127,7 +161,7 @@
 			}
 			#sidebar nav#menu ul li a:hover {
 				background: #23234a;
-				color: #4a90e2;
+				color: var(--space-accent);
 			}
 			#sidebar h2, #sidebar header.major h2 {
 				color: #fff;
@@ -137,11 +171,11 @@
 
 			/* Sidebar quick links */
 			#sidebar .mini-posts article p, #sidebar .mini-posts article a {
-				color: #e0e0ff;
+				color: #eaf6fb;
 				font-size: 1em;
 			}
 			#sidebar .mini-posts article a:hover {
-				color: #4a90e2;
+				color: var(--space-accent);
 			}
 
 			/* Buttons */
@@ -159,17 +193,18 @@
 				font-weight: 500;
 			}
 			.btn-download:hover {
-				background-color: #4a90e2;
+				background-color: var(--space-accent);
 				color: #fff;
 				transform: translateY(-2px);
 			}
 
 			/* Card and section backgrounds */
 			.card, .timeline-content, .project-card, .award-card {
-				background: rgba(20, 20, 40, 0.98);
+				background: var(--space-card);
 				color: #fff;
 				border-radius: 12px;
-				box-shadow: 0 4px 24px 0 rgba(74,144,226,0.10);
+				box-shadow: 0 4px 24px 0 var(--space-glow);
+				border: 1px solid var(--space-accent);
 			}
 
 			/* Fix for skills grid and icon cloud */
@@ -189,11 +224,12 @@
 
 			/* Space theme and layout essentials */
 			:root {
-				--space-bg: #0a0a1a;
-				--space-text: #ffffff;
-				--space-accent: #4a90e2;
+				--space-bg: #070a1a;
+				--space-bg2: #10132a;
+				--space-text: #eaf6fb;
+				--space-accent: #4ad1ff;
 				--space-glow: #6b8aff;
-				--space-card: rgba(16, 16, 32, 0.8);
+				--space-card: rgba(20, 24, 48, 0.92);
 			}
 
 			body {
@@ -228,7 +264,7 @@
 
 			#sidebar {
 				width: 320px;
-				background: rgba(20, 20, 40, 0.95);
+				background: rgba(20, 24, 48, 0.98);
 				box-shadow: 2px 0 20px 0 rgba(74,144,226,0.08);
 				color: var(--space-text);
 				z-index: 10;
