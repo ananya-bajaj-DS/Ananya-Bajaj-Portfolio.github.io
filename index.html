@@ -146,9 +146,37 @@
 											</div>
 										</article>
 										<article>
-											<!-- <span class="icon brands fa-python"></span> -->
 											<div class="content">
 												<h3>Packages / Frameworks</h3>
+												<style>
+													.frameworks-grid {
+														display: grid;
+														grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+														gap: 28px 32px;
+														justify-items: center;
+														align-items: center;
+														margin: 32px 0 0 0;
+														padding: 0 10px;
+														max-width: 700px;
+														margin-left: auto;
+														margin-right: auto;
+													}
+													.framework-logo {
+														width: 70px;
+														height: 70px;
+														object-fit: contain;
+														display: block;
+														background: #fff;
+														border-radius: 12px;
+														box-shadow: 0 2px 8px #eee;
+														transition: box-shadow 0.2s, transform 0.2s;
+														padding: 8px;
+													}
+													.framework-logo:hover {
+														box-shadow: 0 6px 18px #f56a6a33;
+														transform: scale(1.08);
+													}
+												</style>
 												<p><meta charset="UTF-8">
 													<meta name="viewport" content="width=device-width, initial-scale=1.0">
 													<title>Cloud of Icons</title>
@@ -475,6 +503,7 @@
 										<h2>Professional Experience</h2>
 									</header>
 									<style>
+										/* Timeline Modernization */
 										.timeline-bg {
 											background: #f5f5f5;
 											padding: 60px 0 40px 0;
@@ -490,15 +519,21 @@
 										.timeline-container::after {
 											content: '';
 											position: absolute;
-											width: 6px;
-											background: #d32f2f;
+											width: 3px;
+											background: #f56a6a;
 											top: 0;
 											bottom: 0;
 											left: 50%;
-											margin-left: -3px;
-											border-radius: 3px;
-											box-shadow: 0 0 12px #d32f2f33;
+											margin-left: -1.5px;
+											border-radius: 2px;
+											box-shadow: 0 0 16px 2px #f56a6a55;
 											z-index: 0;
+											transition: box-shadow 0.3s;
+											animation: timeline-glow 2s infinite alternate;
+										}
+										@keyframes timeline-glow {
+											0% { box-shadow: 0 0 8px 2px #f56a6a33; }
+											100% { box-shadow: 0 0 24px 4px #f56a6a77; }
 										}
 										.timeline-item {
 											padding: 20px 40px;
@@ -518,41 +553,46 @@
 										.timeline-item::after {
 											content: '';
 											position: absolute;
-											width: 28px;
-											height: 28px;
+											width: 88px;
+											height: 88px;
 											background: #fff;
-											border: 4px solid #d32f2f;
+											border: 4px solid #f56a6a;
 											top: 50%;
 											transform: translateY(-50%);
 											border-radius: 50%;
 											z-index: 2;
-											box-shadow: 0 0 8px #d32f2f22;
+											box-shadow: 0 0 24px 4px #f56a6a55;
+											pointer-events: none;
 										}
 										.timeline-item:nth-child(odd)::after {
-											right: -14px;
+											right: -44px;
 										}
 										.timeline-item:nth-child(even)::after {
-											left: -14px;
+											left: -44px;
 										}
 										.company-logo {
-											width: 54px;
-											height: 54px;
+											width: 80px;
+											height: 80px;
 											border-radius: 50%;
 											position: absolute;
 											top: 50%;
 											background: #fff;
 											object-fit: cover;
-											box-shadow: 0 2px 8px #d32f2f22;
-											border: 2.5px solid #d32f2f;
+											box-shadow: 0 0 24px 4px #f56a6a55;
+											border: 3px solid #f56a6a;
 											transform: translateY(-50%);
 											z-index: 3;
-											transition: box-shadow 0.3s;
+											transition: box-shadow 0.3s, transform 0.2s;
 										}
 										.timeline-item:nth-child(odd) .company-logo {
-											right: -27px;
+											right: -40px;
 										}
 										.timeline-item:nth-child(even) .company-logo {
-											left: -27px;
+											left: -40px;
+										}
+										.company-logo:hover {
+											box-shadow: 0 0 36px 8px #f56a6a99;
+											transform: translateY(-50%) scale(1.07);
 										}
 										.timeline-date {
 											position: absolute;
@@ -560,25 +600,24 @@
 											transform: translateY(-50%);
 											font-weight: 700;
 											font-size: 1em;
-											color: #fff;
-											background: #d32f2f;
+											color: #f56a6a;
+											background: #fff;
 											border-radius: 999px;
-											padding: 7px 22px;
-											box-shadow: 0 2px 8px #d32f2f22;
-											letter-spacing: 0.5px;
-											display: flex;
-											align-items: center;
-											z-index: 4;
-											border: 2px solid #fff;
+											padding: 5px 22px;
+											box-shadow: 0 2px 8px #f56a6a11;
+											border: 2px solid #f56a6a;
 											font-family: inherit;
+											z-index: 4;
+											white-space: nowrap;
+											transition: box-shadow 0.2s, color 0.2s;
+											letter-spacing: 0.5px;
+											display: inline-block;
 										}
 										.timeline-item:nth-child(odd) .timeline-date {
-											right: -170px;
-											justify-content: flex-end;
+											right: -220px;
 										}
 										.timeline-item:nth-child(even) .timeline-date {
-											left: -170px;
-											justify-content: flex-start;
+											left: -220px;
 										}
 										.timeline-content {
 											background: #fff;
@@ -595,7 +634,11 @@
 											text-align: left;
 											font-family: inherit;
 											color: #232323;
-											transition: box-shadow 0.3s;
+											transition: box-shadow 0.3s, transform 0.2s;
+										}
+										.timeline-content:hover {
+											box-shadow: 0 8px 32px 0 #f56a6a22;
+											transform: scale(1.025);
 										}
 										.timeline-content h3 {
 											font-size: 1.2em;
@@ -605,7 +648,7 @@
 											letter-spacing: 0.5px;
 										}
 										.timeline-content .company-name {
-											color: #d32f2f;
+											color: #f56a6a;
 											font-weight: 600;
 											margin-bottom: 0.5em;
 											font-size: 1.05em;
@@ -616,26 +659,26 @@
 											margin-bottom: 0.5em;
 										}
 										.learn-more-btn {
-											display: inline-block;
-											padding: 8px 18px;
-											background: #d32f2f;
-											color: #fff;
+											display: inline;
+											background: none;
+											color: #f56a6a;
 											font-weight: 700;
 											border: none;
-											border-radius: 7px;
+											border-radius: 0;
 											font-size: 1em;
 											margin-top: 10px;
-											box-shadow: 0 2px 8px #d32f2f22;
+											box-shadow: none;
 											cursor: pointer;
-											transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+											transition: color 0.2s, text-decoration 0.2s;
 											outline: none;
-											text-transform: uppercase;
-											letter-spacing: 1px;
+											text-transform: none;
+											letter-spacing: 0.5px;
+											padding: 0;
+											text-decoration: underline;
 										}
 										.learn-more-btn:hover {
-											background: #b71c1c;
-											box-shadow: 0 4px 16px #d32f2f33;
-											transform: translateY(-2px) scale(1.04);
+											color: #b71c1c;
+											text-decoration: underline wavy;
 										}
 										@media screen and (max-width: 900px) {
 											.timeline-item, .timeline-item:nth-child(even), .timeline-item:nth-child(odd) {
@@ -644,24 +687,55 @@
 												text-align: left;
 											}
 											.timeline-date, .timeline-item:nth-child(odd) .timeline-date, .timeline-item:nth-child(even) .timeline-date {
-												left: 0 !important;
+												left: 120px !important;
 												right: auto !important;
-												top: -40px;
+												top: 0;
 												position: relative;
-												justify-content: flex-start;
 											}
 											.company-logo, .timeline-item:nth-child(odd) .company-logo, .timeline-item:nth-child(even) .company-logo {
-												left: -27px !important;
+												left: 0 !important;
 												right: auto !important;
 											}
 											.timeline-container::after {
-												left: 20px;
+												left: 44px;
 												margin-left: 0;
 											}
 											.timeline-content {
 												min-width: 0;
 												max-width: 100%;
 											}
+										}
+										.timeline-item, .company-logo, .timeline-content {
+											opacity: 0;
+											transform: translateY(40px) scale(0.98);
+											transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+										}
+										.timeline-item.visible .timeline-content,
+										.timeline-item.visible .company-logo {
+											opacity: 1;
+											transform: translateY(0) scale(1);
+										}
+										.timeline-item.visible {
+											opacity: 1;
+											transform: none;
+										}
+										.timeline-item:nth-child(odd) .timeline-content {
+											transform: translateY(40px) translateX(-40px) scale(0.98);
+										}
+										.timeline-item:nth-child(even) .timeline-content {
+											transform: translateY(40px) translateX(40px) scale(0.98);
+										}
+										.timeline-item.visible .timeline-content {
+											transform: translateY(0) translateX(0) scale(1);
+										}
+										.timeline-item:nth-child(odd) .company-logo {
+											transform: translateY(40px) translateX(-20px) scale(0.95);
+										}
+										.timeline-item:nth-child(even) .company-logo {
+											transform: translateY(40px) translateX(20px) scale(0.95);
+										}
+										.timeline-item.visible .company-logo {
+											transform: translateY(0) translateX(0) scale(1);
 										}
 									</style>
 									<div class="timeline-bg">
@@ -1573,6 +1647,21 @@
           if (event.target == modal) { modal.style.display = "none"; }
         });
       }
+    </script>
+    <script>
+      // Scroll/fade-in animation for timeline
+      document.addEventListener('DOMContentLoaded', function() {
+        var items = document.querySelectorAll('.timeline-item');
+        var observer = new window.IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.2 });
+        items.forEach(function(item) { observer.observe(item); });
+      });
     </script>
 
 	</body>
