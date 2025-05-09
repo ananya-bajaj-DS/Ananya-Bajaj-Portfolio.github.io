@@ -431,303 +431,289 @@
  <!-- TEST SEC ends -->
 							
 							
-								<!-- Section -->
-								<section id="experience">
-									<header class="major">
-										<h2>Professional Experience</h2>
-									</header>
-									<style>
-										/* Timeline Modernization */
-										.timeline-bg {
-											background: #f5f5f5;
-											padding: 60px 0 40px 0;
-											border-radius: 18px;
-											margin-bottom: 40px;
-										}
-										.timeline-container {
-											position: relative;
-											max-width: 1100px;
-											margin: 0 auto;
-											padding: 40px 0;
-											display: block;
-										}
-										.timeline-container::after {
-											content: '';
-											position: absolute;
-											width: 3px;
-											background: #f56a6a;
-											top: 0;
-											bottom: 0;
-											left: 50%;
-											margin-left: -1.5px;
-											border-radius: 2px;
-											box-shadow: 0 0 16px 2px #f56a6a55;
-											z-index: 0;
-											transition: box-shadow 0.3s;
-											animation: timeline-glow 2s infinite alternate;
-										}
-										@keyframes timeline-glow {
-											0% { box-shadow: 0 0 8px 2px #f56a6a33; }
-											100% { box-shadow: 0 0 24px 4px #f56a6a77; }
-										}
-										.timeline-item {
-											position: relative;
-											min-height: 140px;
-										}
-										.timeline-item:nth-child(odd) {
-											left: 0;
-											text-align: right;
-										}
-										.timeline-item:nth-child(even) {
-											left: 50%;
-											text-align: left;
-										}
-										.timeline-item::after {
-											content: '';
-											position: absolute;
-											width: 88px;
-											height: 88px;
-											background: #fff;
-											border: 4px solid #f56a6a;
-											top: 50%;
-											transform: translateY(-50%);
-											border-radius: 50%;
-											z-index: 2;
-											box-shadow: 0 0 24px 4px #f56a6a55;
-											pointer-events: none;
-										}
-										.timeline-item:nth-child(odd)::after {
-											right: -44px;
-										}
-										.timeline-item:nth-child(even)::after {
-											left: -44px;
-										}
-										.timeline-item .company-logo {
-											position: absolute;
-											top: 50%;
-											left: 50%;
-											width: 88px;
-											height: 88px;
-											background: #fff;
-											border: 4px solid #f56a6a;
-											border-radius: 50%;
-											box-shadow: 0 0 24px 4px #f56a6a55;
-											transform: translate(-50%, -50%);
-											display: flex;
-											align-items: center;
-											justify-content: center;
-											z-index: 2;
-										}
-										.timeline-item:nth-child(odd) .company-logo {
-											right: -40px;
-										}
-										.timeline-item:nth-child(even) .company-logo {
-											left: -40px;
-										}
-										.timeline-item .company-logo img {
-											width: 64px;
-											height: 64px;
-											object-fit: contain;
-											border-radius: 50%;
-											display: block;
-										}
-										.timeline-item .timeline-content {
-											position: relative;
-											z-index: 3;
-											margin-left: 120px;
-											margin-right: 0;
-										}
-										.timeline-item:nth-child(even) .timeline-content {
-											margin-left: 0;
-											margin-right: 120px;
-										}
-										.timeline-item .timeline-date {
-											position: absolute;
-											top: 50%;
-											transform: translateY(-50%);
-											font-weight: 700;
-											font-size: 1em;
-											color: #f56a6a;
-											background: #fff;
-											border-radius: 999px;
-											padding: 5px 22px;
-											box-shadow: 0 2px 8px #f56a6a11;
-											border: 2px solid #f56a6a;
-											font-family: inherit;
-											z-index: 4;
-											white-space: nowrap;
-											transition: box-shadow 0.2s, color 0.2s;
-											letter-spacing: 0.5px;
-											display: inline-block;
-										}
-										.timeline-item:nth-child(odd) .timeline-date {
-											right: -220px;
-										}
-										.timeline-item:nth-child(even) .timeline-date {
-											left: -220px;
-										}
-										.timeline-content {
-											background: #fff;
-											box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.07);
-											border-radius: 14px;
-											padding: 28px 24px 20px 24px;
-											margin: 0 0 0 0;
-											display: inline-block;
-											min-width: 280px;
-											max-width: 400px;
-											border: 1.5px solid #eee;
-											position: relative;
-											z-index: 5;
-											text-align: left;
-											font-family: inherit;
-											color: #232323;
-											transition: box-shadow 0.3s, transform 0.2s;
-											box-sizing: border-box;
-										}
-										.timeline-content:hover {
-											box-shadow: 0 8px 32px 0 #f56a6a22;
-											transform: scale(1.025);
-										}
-										.timeline-content h3 {
-											font-size: 1.2em;
-											font-weight: 800;
-											margin-bottom: 0.2em;
-											color: #222;
-											letter-spacing: 0.5px;
-										}
-										.timeline-content .company-name {
-											color: #f56a6a;
-											font-weight: 600;
-											margin-bottom: 0.5em;
-											font-size: 1.05em;
-										}
-										.timeline-content p {
-											color: #444;
-											font-size: 1em;
-											margin-bottom: 0.5em;
-										}
-										.learn-more-btn {
-											display: inline;
-											background: none;
-											color: #f56a6a;
-											font-weight: 700;
-											border: none;
-											border-radius: 0;
-											font-size: 1em;
-											margin-top: 10px;
-											box-shadow: none;
-											cursor: pointer;
-											transition: color 0.2s, text-decoration 0.2s;
-											outline: none;
-											text-transform: none;
-											letter-spacing: 0.5px;
-											padding: 0;
-											text-decoration: underline;
-										}
-										.learn-more-btn:hover {
-											color: #b71c1c;
-											text-decoration: underline wavy;
-										}
-										@media screen and (max-width: 900px) {
-											.timeline-item .timeline-content,
-											.timeline-item:nth-child(even) .timeline-content {
-												margin-left: 0;
-												margin-right: 0;
-											}
-											.timeline-item .company-logo {
-												left: 44px;
-												transform: translateY(-50%);
-											}
-										}
-										.timeline-item, .company-logo, .timeline-content {
-											opacity: 0;
-											transform: translateY(40px) scale(0.98);
-											transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
-										}
-										.timeline-item.visible .timeline-content,
-										.timeline-item.visible .company-logo {
-											opacity: 1;
-											transform: translateY(0) scale(1);
-										}
-										.timeline-item.visible {
-											opacity: 1;
-											transform: none;
-										}
-										.timeline-item:nth-child(odd) .timeline-content {
-											transform: translateY(40px) translateX(-40px) scale(0.98);
-										}
-										.timeline-item:nth-child(even) .timeline-content {
-											transform: translateY(40px) translateX(40px) scale(0.98);
-										}
-										.timeline-item.visible .timeline-content {
-											transform: translateY(0) translateX(0) scale(1);
-										}
-										.timeline-item:nth-child(odd) .company-logo {
-											transform: translateY(40px) translateX(-20px) scale(0.95);
-										}
-										.timeline-item:nth-child(even) .company-logo {
-											transform: translateY(40px) translateX(20px) scale(0.95);
-										}
-										.timeline-item.visible .company-logo {
-											transform: translateY(0) translateX(0) scale(1);
-										}
-									</style>
-									<div class="timeline-bg">
-										<div class="timeline-container">
-											<div class="timeline-item left">
-												<div class="timeline-content">
-													<h3>AI Engineer</h3>
-													<div class="company-name">Ephanti</div>
-													<p>Milpitas, CA<br>@Maven Assist Team</p>
-													<button class="learn-more-btn" onclick="openEModal(); return false;">Learn More</button>
-												</div>
-												<div class="company-logo"><img src="images/ephanti.jpeg" alt="Ephanti"></div>
-												<div class="timeline-date">Aug 2024 - Present</div>
-											</div>
-											<div class="timeline-item right">
-												<div class="company-logo"><img src="images/nasa.jpeg" alt="NASA"></div>
-												<div class="timeline-content">
-													<h3>AI/ML Intern</h3>
-													<div class="company-name">NASA Ames Research Center</div>
-													<p>Mountain View, CA<br>@NASA Aeronautics Research Institute</p>
-													<a href="https://docs.google.com/presentation/d/14SlTD6gNFjg6Mvce0aRbDJAdBO5sYnRs/edit?usp=sharing&ouid=109890373911931743733&rtpof=true&sd=true" class="learn-more-btn">Learn More</a>
-												</div>
-												<div class="timeline-date">Summer 2024</div>
-											</div>
-											<div class="timeline-item left">
-												<div class="timeline-content">
-													<h3>Graduate Data Science Intern</h3>
-													<div class="company-name">Nike, Inc.</div>
-													<p>Beaverton, OR<br>@Merchant Financial Planning Team</p>
-													<button class="learn-more-btn" onclick="openModal(); return false;">Learn More</button>
-												</div>
-												<div class="company-logo"><img src="images/nike.jpg" alt="Nike"></div>
-												<div class="timeline-date">Summer 2023</div>
-											</div>
-											<div class="timeline-item right">
-												<div class="company-logo"><img src="images/UA.jpeg" alt="United Airlines"></div>
-												<div class="timeline-content">
-													<h3>Associate Analyst</h3>
-													<div class="company-name">United Airlines, Inc.</div>
-													<p>Delhi, India<br>@Airport Operations Team</p>
-													<button class="learn-more-btn" onclick="openUnitedModal(); return false;">Learn More</button>
-												</div>
-												<div class="timeline-date">Jul 2020 - Sep 2022</div>
-											</div>
-											<div class="timeline-item left">
-												<div class="timeline-content">
-													<h3>Analytics Intern</h3>
-													<div class="company-name">Birlasoft, C.K. Birla Group</div>
-													<p>Delhi-NCR, India<br>@IT Transformation Team</p>
-													<button class="learn-more-btn" onclick="openBSModal(); return false;">Learn More</button>
-												</div>
-												<div class="company-logo"><img src="images/BS.png" alt="Birlasoft"></div>
-												<div class="timeline-date">Summer 2019</div>
-											</div>
-										</div>
-									</div>
-								</section>
-
+									<!-- Section -->
+		<section id="experience">
+			<header class="major">
+			<h2>Professional Experience</h2>
+			</header>
+		
+			<style>
+			.timeline-bg {
+				background: #f5f5f5;
+				padding: 60px 0 40px 0;
+				border-radius: 18px;
+				margin-bottom: 40px;
+			}
+		
+			.timeline-container {
+				position: relative;
+				max-width: 1100px;
+				margin: 0 auto;
+				padding: 40px 0;
+				display: block;
+			}
+		
+			.timeline-container::after {
+				content: '';
+				position: absolute;
+				width: 3px;
+				background: #f56a6a;
+				top: 0;
+				bottom: 0;
+				left: 50%;
+				margin-left: -1.5px;
+				border-radius: 2px;
+				box-shadow: 0 0 16px 2px #f56a6a55;
+				z-index: 0;
+				animation: timeline-glow 2s infinite alternate;
+			}
+		
+			@keyframes timeline-glow {
+				0% { box-shadow: 0 0 8px 2px #f56a6a33; }
+				100% { box-shadow: 0 0 24px 4px #f56a6a77; }
+			}
+		
+			.timeline-item {
+				position: relative;
+				min-height: 140px;
+			}
+		
+			.timeline-item.left {
+				left: 0;
+				text-align: right;
+			}
+		
+			.timeline-item.right {
+				left: 50%;
+				text-align: left;
+			}
+		
+			.timeline-item::after {
+				content: '';
+				position: absolute;
+				width: 88px;
+				height: 88px;
+				background: #fff;
+				border: 4px solid #f56a6a;
+				top: 50%;
+				transform: translateY(-50%);
+				border-radius: 50%;
+				z-index: 2;
+				box-shadow: 0 0 24px 4px #f56a6a55;
+				pointer-events: none;
+			}
+		
+			.timeline-item.left::after {
+				right: -44px;
+			}
+		
+			.timeline-item.right::after {
+				left: -44px;
+			}
+		
+			.company-logo {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 88px;
+				height: 88px;
+				background: #fff;
+				border: 4px solid #f56a6a;
+				border-radius: 50%;
+				box-shadow: 0 0 24px 4px #f56a6a55;
+				transform: translate(-50%, -50%);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 2;
+			}
+		
+			.timeline-item.left .company-logo {
+				right: -40px;
+				left: auto;
+			}
+		
+			.timeline-item.right .company-logo {
+				left: -40px;
+			}
+		
+			.company-logo img {
+				width: 64px;
+				height: 64px;
+				object-fit: contain;
+				border-radius: 50%;
+				display: block;
+			}
+		
+			.timeline-content {
+				background: #fff;
+				box-shadow: 0 4px 16px rgba(31, 38, 135, 0.07);
+				border-radius: 14px;
+				padding: 28px 24px 20px;
+				display: inline-block;
+				min-width: 280px;
+				max-width: 400px;
+				border: 1.5px solid #eee;
+				position: relative;
+				z-index: 5;
+				color: #232323;
+				font-family: inherit;
+				transition: box-shadow 0.3s, transform 0.2s;
+			}
+		
+			.timeline-content:hover {
+				box-shadow: 0 8px 32px #f56a6a22;
+				transform: scale(1.025);
+			}
+		
+			.timeline-content h3 {
+				font-size: 1.2em;
+				font-weight: 800;
+				margin-bottom: 0.2em;
+				color: #222;
+			}
+		
+			.company-name {
+				color: #f56a6a;
+				font-weight: 600;
+				font-size: 1.05em;
+				margin-bottom: 0.5em;
+			}
+		
+			.timeline-content p {
+				color: #444;
+				font-size: 1em;
+				margin-bottom: 0.5em;
+			}
+		
+			.timeline-date {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				font-weight: 700;
+				font-size: 1em;
+				color: #f56a6a;
+				background: #fff;
+				border-radius: 999px;
+				padding: 5px 22px;
+				border: 2px solid #f56a6a;
+				z-index: 4;
+				white-space: nowrap;
+			}
+		
+			.timeline-item.left .timeline-date {
+				right: -220px;
+			}
+		
+			.timeline-item.right .timeline-date {
+				left: -220px;
+			}
+		
+			.learn-more-btn, .timeline-content a.learn-more-btn {
+				background: none;
+				color: #f56a6a;
+				font-weight: 700;
+				border: none;
+				font-size: 1em;
+				margin-top: 10px;
+				cursor: pointer;
+				text-decoration: underline;
+			}
+		
+			.learn-more-btn:hover {
+				color: #b71c1c;
+				text-decoration: underline wavy;
+			}
+		
+			@media screen and (max-width: 900px) {
+				.timeline-item.left, .timeline-item.right {
+				left: 0 !important;
+				text-align: left;
+				}
+		
+				.timeline-date {
+				position: relative;
+				margin-top: 20px;
+				left: auto !important;
+				right: auto !important;
+				transform: none;
+				display: inline-block;
+				}
+		
+				.company-logo {
+				left: 0 !important;
+				right: auto !important;
+				transform: translateY(-50%);
+				}
+		
+				.timeline-content {
+				margin-left: 100px;
+				}
+			}
+			</style>
+		
+			<div class="timeline-bg">
+			<div class="timeline-container">
+		
+				<div class="timeline-item left">
+				<div class="timeline-content">
+					<h3>AI Engineer</h3>
+					<div class="company-name">Ephanti</div>
+					<p>Milpitas, CA<br>@Maven Assist Team</p>
+					<button class="learn-more-btn" onclick="openEModal(); return false;">Learn More</button>
+				</div>
+				<div class="company-logo"><img src="images/ephanti.jpeg" alt="Ephanti"></div>
+				<div class="timeline-date">Aug 2024 - Present</div>
+				</div>
+		
+				<div class="timeline-item right">
+				<div class="company-logo"><img src="images/nasa.jpeg" alt="NASA"></div>
+				<div class="timeline-content">
+					<h3>AI/ML Intern</h3>
+					<div class="company-name">NASA Ames Research Center</div>
+					<p>Mountain View, CA<br>@NASA Aeronautics Research Institute</p>
+					<a href="https://docs.google.com/presentation/..." class="learn-more-btn">Learn More</a>
+				</div>
+				<div class="timeline-date">Summer 2024</div>
+				</div>
+		
+				<div class="timeline-item left">
+				<div class="timeline-content">
+					<h3>Graduate Data Science Intern</h3>
+					<div class="company-name">Nike, Inc.</div>
+					<p>Beaverton, OR<br>@Merchant Financial Planning Team</p>
+					<button class="learn-more-btn" onclick="openModal(); return false;">Learn More</button>
+				</div>
+				<div class="company-logo"><img src="images/nike.jpg" alt="Nike"></div>
+				<div class="timeline-date">Summer 2023</div>
+				</div>
+		
+				<div class="timeline-item right">
+				<div class="company-logo"><img src="images/UA.jpeg" alt="United Airlines"></div>
+				<div class="timeline-content">
+					<h3>Associate Analyst</h3>
+					<div class="company-name">United Airlines, Inc.</div>
+					<p>Delhi, India<br>@Airport Operations Team</p>
+					<button class="learn-more-btn" onclick="openUnitedModal(); return false;">Learn More</button>
+				</div>
+				<div class="timeline-date">Jul 2020 - Sep 2022</div>
+				</div>
+		
+				<div class="timeline-item left">
+				<div class="timeline-content">
+					<h3>Analytics Intern</h3>
+					<div class="company-name">Birlasoft, C.K. Birla Group</div>
+					<p>Delhi-NCR, India<br>@IT Transformation Team</p>
+					<button class="learn-more-btn" onclick="openBSModal(); return false;">Learn More</button>
+				</div>
+				<div class="company-logo"><img src="images/BS.png" alt="Birlasoft"></div>
+				<div class="timeline-date">Summer 2019</div>
+				</div>
+		
+			</div>
+			</div>
+		</section>
+  
 								<section id="education">
 									<header class="major">
 										<h2>Education</h2>
