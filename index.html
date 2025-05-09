@@ -9,507 +9,9 @@
 		<title>Ananya Bajaj</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
-		<style>
-			:root {
-				--space-bg: #070a1a;
-				--space-bg2: #10132a;
-				--space-text: #eaf6fb;
-				--space-accent: #4ad1ff;
-				--space-glow: #6b8aff;
-				--space-card: rgba(20, 24, 48, 0.92);
-			}
-
-			/* CSS Reset */
-			html, body, div, span, applet, object, iframe,
-			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-			a, abbr, acronym, address, big, cite, code,
-			del, dfn, em, img, ins, kbd, q, s, samp,
-			small, strike, strong, sub, sup, tt, var,
-			b, u, i, center,
-			dl, dt, dd, ol, ul, li,
-			fieldset, form, label, legend,
-			table, caption, tbody, tfoot, thead, tr, th, td,
-			article, aside, canvas, details, embed, 
-			figure, figcaption, footer, header, hgroup, 
-			menu, nav, output, ruby, section, summary,
-			time, mark, audio, video {
-				margin: 0;
-				padding: 0;
-				border: 0;
-				font-size: 100%;
-				font: inherit;
-				vertical-align: baseline;
-				box-sizing: border-box;
-			}
-
-			body {
-				line-height: 1.5;
-				background: var(--space-bg);
-				color: var(--space-text);
-				font-family: 'Segoe UI', Arial, sans-serif;
-				min-height: 100vh;
-				position: relative;
-				overflow-x: hidden;
-			}
-
-			.stars {
-				position: fixed;
-				top: 0; left: 0; width: 100vw; height: 100vh;
-				z-index: 0;
-				pointer-events: none;
-			}
-			.star {
-				position: absolute;
-				background: white;
-				border-radius: 50%;
-				opacity: 0.7;
-				animation: twinkle 3s infinite;
-			}
-			@keyframes twinkle {
-				0%, 100% { opacity: 0.3; }
-				50% { opacity: 1; }
-			}
-
-			#wrapper {
-				display: flex;
-				min-height: 100vh;
-				width: 100vw;
-				position: relative;
-				z-index: 1;
-			}
-
-			#sidebar {
-				width: 320px;
-				background: rgba(20, 24, 48, 0.98);
-				border-right: 2px solid var(--space-glow);
-				box-shadow: 0 0 32px 0 var(--space-glow);
-				color: var(--space-text);
-				z-index: 10;
-				position: relative;
-				min-height: 100vh;
-				backdrop-filter: blur(4px);
-			}
-			#sidebar .inner {
-				padding: 30px 20px;
-			}
-
-			#main {
-				flex: 1 1 0;
-				background: transparent;
-				min-width: 0;
-				z-index: 1;
-			}
-			#main .inner {
-				max-width: 1100px;
-				margin: 0 auto;
-				padding: 40px 20px 40px 20px;
-			}
-
-			@media (max-width: 1100px) {
-				#main .inner { padding: 30px 5vw 30px 5vw; }
-				#sidebar { width: 220px; }
-			}
-			@media (max-width: 900px) {
-				#wrapper { flex-direction: column; }
-				#sidebar { width: 100vw; position: static; box-shadow: none; min-height: unset; }
-				#main { width: 100vw; }
-			}
-			@media (max-width: 600px) {
-				#main .inner { padding: 10px 2vw 10px 2vw; }
-				#sidebar .inner { padding: 10px 5px; }
-			}
-
-			h1, h2, h3, h4, h5, h6 {
-				color: #fff;
-				font-weight: bold;
-				margin-bottom: 0.5em;
-				letter-spacing: 0.01em;
-			}
-			h1 { font-size: 2.2em; }
-			h2 { font-size: 1.6em; }
-			h3 { font-size: 1.2em; }
-
-			p, ul, ol, li {
-				color: #eaf6fb;
-				font-size: 1.08em;
-				margin-bottom: 0.7em;
-			}
-			ul, ol { margin-left: 1.5em; }
-
-			/* Links */
-			a {
-				color: var(--space-accent);
-				transition: color 0.2s, text-shadow 0.2s;
-			}
-			a:hover, a:focus {
-				color: #fff;
-			}
-
-			/* Sidebar menu */
-			#sidebar nav#menu ul li a {
-				color: #fff;
-				font-weight: 500;
-				text-decoration: none;
-				display: block;
-				padding: 6px 0;
-				border-radius: 4px;
-				transition: background 0.2s, color 0.2s;
-			}
-			#sidebar nav#menu ul li a:hover {
-				background: #23234a;
-				color: var(--space-accent);
-			}
-			#sidebar h2, #sidebar header.major h2 {
-				color: #fff;
-				font-size: 1.3em;
-				margin-top: 1em;
-			}
-
-			/* Sidebar quick links */
-			#sidebar .mini-posts article p, #sidebar .mini-posts article a {
-				color: #eaf6fb;
-				font-size: 1em;
-			}
-			#sidebar .mini-posts article a:hover {
-				color: var(--space-accent);
-			}
-
-			/* Buttons */
-			.btn-download {
-				display: inline-block;
-				padding: 8px 18px;
-				background-color: #23234a;
-				color: #fff;
-				text-decoration: none;
-				border-radius: 8px;
-				font-size: 1.1em;
-				box-shadow: 0 4px 12px rgba(74,144,226,0.08);
-				transition: background 0.3s, color 0.3s, transform 0.3s;
-				margin-top: 10px;
-				font-weight: 500;
-			}
-			.btn-download:hover {
-				background-color: var(--space-accent);
-				color: #fff;
-				transform: translateY(-2px);
-			}
-
-			/* Card and section backgrounds */
-			.card, .timeline-content, .project-card, .award-card {
-				background: var(--space-card);
-				color: #fff;
-				border-radius: 12px;
-				box-shadow: 0 2px 8px 0 var(--space-glow);
-				border: 1px solid var(--space-accent);
-			}
-
-			/* Fix for skills grid and icon cloud */
-			.skills-grid, .icon-cloud {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 18px;
-				align-items: center;
-			}
-			.icon-cloud img {
-				margin: 10px;
-				background: #181830;
-				border-radius: 8px;
-				padding: 4px;
-				box-shadow: 0 2px 8px rgba(74,144,226,0.10);
-			}
-
-			/* Space theme and layout essentials */
-			:root {
-				--space-bg: #070a1a;
-				--space-bg2: #10132a;
-				--space-text: #eaf6fb;
-				--space-accent: #4ad1ff;
-				--space-glow: #6b8aff;
-				--space-card: rgba(20, 24, 48, 0.92);
-			}
-
-			#wrapper {
-				display: flex;
-				min-height: 100vh;
-				width: 100vw;
-			}
-
-			#main {
-				flex: 1 1 0;
-				background: transparent;
-				padding: 0;
-				min-width: 0;
-			}
-
-			#main .inner {
-				max-width: 1100px;
-				margin: 0 auto;
-				padding: 40px 20px 40px 20px;
-			}
-
-			#sidebar {
-				width: 320px;
-				background: rgba(20, 24, 48, 0.98);
-				box-shadow: 2px 0 20px 0 rgba(74,144,226,0.08);
-				color: var(--space-text);
-				z-index: 10;
-				position: relative;
-			}
-
-			#sidebar .inner {
-				padding: 30px 20px;
-			}
-
-			@media (max-width: 1100px) {
-				#main .inner {
-					padding: 30px 5vw 30px 5vw;
-				}
-				#sidebar {
-					width: 220px;
-				}
-			}
-
-			@media (max-width: 900px) {
-				#wrapper {
-					flex-direction: column;
-				}
-				#sidebar {
-					width: 100vw;
-					position: static;
-					box-shadow: none;
-				}
-				#main {
-					width: 100vw;
-				}
-			}
-
-			@media (max-width: 600px) {
-				#main .inner {
-					padding: 10px 2vw 10px 2vw;
-				}
-				#sidebar .inner {
-					padding: 10px 5px;
-				}
-			}
-
-			/* Starry background animation */
-			@keyframes twinkle {
-				0% { opacity: 0.3; }
-				50% { opacity: 1; }
-				100% { opacity: 0.3; }
-			}
-
-			.stars {
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				pointer-events: none;
-				z-index: -1;
-			}
-
-			.star {
-				position: absolute;
-				background: white;
-				border-radius: 50%;
-				animation: twinkle 3s infinite;
-			}
-
-			/* Glowing elements */
-			.glow {
-				box-shadow: 0 0 15px var(--space-glow);
-				transition: all 0.3s ease;
-			}
-
-			.glow:hover {
-				box-shadow: 0 0 25px var(--space-glow);
-				transform: translateY(-2px);
-			}
-
-			/* Card styling */
-			.card {
-				background: var(--space-card);
-				border: 1px solid rgba(107, 138, 255, 0.2);
-				border-radius: 10px;
-				backdrop-filter: blur(10px);
-			}
-
-			/* Timeline styling */
-			.timeline {
-				position: relative;
-				max-width: 1200px;
-				margin: 0 auto;
-				padding: 20px;
-			}
-
-			.timeline::after {
-				content: '';
-				position: absolute;
-				width: 4px;
-				background: linear-gradient(to bottom, var(--space-accent), var(--space-glow));
-				top: 0;
-				bottom: 0;
-				left: 50%;
-				margin-left: -2px;
-				border-radius: 2px;
-				z-index: 0;
-			}
-
-			.timeline-item {
-				position: relative;
-				width: 50%;
-				padding: 40px 40px 40px 40px;
-				opacity: 0;
-				transition: all 0.5s ease;
-			}
-
-			.timeline-item.visible {
-				opacity: 1;
-			}
-
-			.timeline-item:nth-child(even) {
-				left: 50%;
-			}
-
-			.timeline-center {
-				position: absolute;
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%, -50%);
-				display: flex;
-				align-items: center;
-				z-index: 2;
-			}
-
-			.timeline-logo {
-				width: 90px;
-				height: 90px;
-				border-radius: 50%;
-				background: var(--space-bg);
-				border: 4px solid var(--space-accent);
-				box-shadow: 0 0 8px var(--space-glow);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				overflow: hidden;
-				z-index: 2;
-			}
-
-			.timeline-logo img {
-				width: 80px;
-				height: 80px;
-				object-fit: cover;
-				border-radius: 50%;
-			}
-
-			.timeline-date {
-				background: var(--space-accent);
-				color: #fff;
-				padding: 10px 22px;
-				border-radius: 30px;
-				font-size: 1em;
-				font-weight: 500;
-				margin: 0 18px;
-				box-shadow: 0 2px 8px rgba(74,144,226,0.15);
-				white-space: nowrap;
-				z-index: 2;
-			}
-
-			.timeline-item .timeline-center {
-				flex-direction: row;
-			}
-			.timeline-item:nth-child(even) .timeline-center {
-				flex-direction: row-reverse;
-			}
-			.timeline-item .timeline-date {
-				order: 1;
-			}
-			.timeline-item .timeline-logo {
-				order: 2;
-			}
-			.timeline-item:nth-child(even) .timeline-date {
-				order: 2;
-			}
-			.timeline-item:nth-child(even) .timeline-logo {
-				order: 1;
-			}
-
-			.timeline-content {
-				margin-top: 20px;
-				background: var(--space-card);
-				border-radius: 10px;
-				border: 1px solid rgba(107, 138, 255, 0.2);
-				padding: 20px;
-				position: relative;
-				z-index: 1;
-				animation: float 6s ease-in-out infinite;
-			}
-
-			/* Content styling */
-			.timeline-content h3 {
-				color: var(--space-text);
-				margin-bottom: 10px;
-				font-size: 1.2em;
-			}
-
-			.timeline-content p {
-				color: var(--space-text);
-				margin: 5px 0;
-				opacity: 0.9;
-			}
-
-			.company-name {
-				color: var(--space-accent) !important;
-				font-weight: bold;
-				margin-bottom: 10px;
-			}
-
-			/* AI-powered animations */
-			@keyframes float {
-				0% { transform: translateY(0px); }
-				50% { transform: translateY(-10px); }
-				100% { transform: translateY(0px); }
-			}
-
-			#main, #main .inner {
-				background: var(--space-bg2) !important;
-				border-radius: 18px;
-				box-shadow: 0 0 32px 0 var(--space-glow);
-				padding: 40px 20px;
-			}
-
-			#banner .image.object img {
-				display: block;
-				max-width: 220px;
-				border-radius: 50%;
-				margin: 0 auto 20px auto;
-				box-shadow: 0 2px 12px var(--space-glow);
-				background: #181830;
-			}
-
-			/* Fix spacing for main content */
-			#main .inner > *:not(:last-child) {
-				margin-bottom: 2.5em;
-			}
-
-			/* Remove duplicate or conflicting sidebar/main CSS if present */
-
-			/* Fix linter error in .icon-cloud img */
-			.icon-cloud img {
-				/* display: inline-block; */
-				margin: 10px;
-				background: #181830;
-				border-radius: 8px;
-				padding: 4px;
-				box-shadow: 0 2px 8px rgba(74,144,226,0.10);
-			}
-		</style>
+		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-		<!-- Starry Background -->
-		<div class="stars" id="stars"></div>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -848,121 +350,368 @@
 									</div>
 								</section>
 
+<!-- TESTT SECIN -->
+
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            padding: 20px;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #333;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        .container {
+            padding: 20px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%;
+        }
+        .content {
+            padding: 20px;
+            background: #1e1e1e;
+            position: relative;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+        }
+        .content h3 {
+            margin: 0;
+            color: #ffcc00;
+        }
+        .content p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #bbb;
+        }
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 20px;
+            }
+            .container {
+                width: 100%;
+                padding-left: 50px;
+            }
+            .right {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+
+    <h2 style="text-align:center;">My Journey</h2>
+    <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <img src="images/ephanti.jpeg" alt="Ephanti Logo" class="logo">
+                <div>
+                    <h3>AI Engineer - Ephanti</h3>
+                    <p>Aug '24 - Present | @Maven Assist Team</p>
+                </div>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <img src="images/nasa.jpeg" alt="NASA Logo" class="logo">
+                <div>
+                    <h3>AI/ML Intern - NASA Ames</h3>
+                    <p>Summer '24 | @NASA Aeronautics Research Institute</p>
+                </div>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <img src="images/nike.jpg" alt="Nike Logo" class="logo">
+                <div>
+                    <h3>Graduate Data Science Intern - Nike</h3>
+                    <p>Summer '23 | @Merchant Financial Planning Team</p>
+                </div>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <img src="images/UA.jpeg" alt="United Airlines Logo" class="logo">
+                <div>
+                    <h3>Associate Analyst - United Airlines</h3>
+                    <p>Nov '20 - Sep '22 | @Airport Operations Team</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+
+ <!-- TEST SEC ends -->
+							
+							
 								<!-- Section -->
 								<section id="experience">
 									<header class="major">
 										<h2>Professional Experience</h2>
 									</header>
-									<div class="timeline">
+									<style>
+										.timeline-container {
+											position: relative;
+											max-width: 1200px;
+											margin: 0 auto;
+											padding: 40px 0;
+										}
+
+										.timeline-container::after {
+											content: '';
+											position: absolute;
+											width: 6px;
+											background: linear-gradient(to bottom, #d32f2f, #ff6b6b);
+											top: 0;
+											bottom: 0;
+											left: 50%;
+											margin-left: -3px;
+											border-radius: 3px;
+										}
+
+										.timeline-item {
+											padding: 10px 40px;
+											position: relative;
+											width: 50%;
+											box-sizing: border-box;
+										}
+
+										.timeline-item::after {
+											content: '';
+											position: absolute;
+											width: 25px;
+											height: 25px;
+											right: -17px;
+											background-color: white;
+											border: 4px solid #d32f2f;
+											top: 15px;
+											border-radius: 50%;
+											z-index: 1;
+										}
+
+										.timeline-item:nth-child(even) {
+											left: 50%;
+										}
+
+										.timeline-item:nth-child(even)::after {
+											left: -16px;
+										}
+
+										.timeline-content {
+											padding: 20px;
+											background-color: white;
+											position: relative;
+											border-radius: 10px;
+											box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+											transition: transform 0.3s ease;
+										}
+
+										.timeline-content:hover {
+											transform: translateY(-5px);
+										}
+
+										.timeline-date {
+											position: absolute;
+											top: 50%;
+											transform: translateY(-50%);
+											width: 120px;
+											text-align: center;
+											font-weight: bold;
+											color: #d32f2f;
+										}
+
+										.timeline-item:nth-child(odd) .timeline-date {
+											right: -170px;
+										}
+
+										.timeline-item:nth-child(even) .timeline-date {
+											left: -170px;
+										}
+
+										.company-logo {
+											width: 60px;
+											height: 60px;
+											border-radius: 50%;
+											position: absolute;
+											top: 50%;
+											transform: translateY(-50%);
+											z-index: 2;
+										}
+
+										.timeline-item:nth-child(odd) .company-logo {
+											right: -30px;
+										}
+
+										.timeline-item:nth-child(even) .company-logo {
+											left: -30px;
+										}
+
+										.learn-more-btn {
+											display: inline-block;
+											padding: 8px 16px;
+											background-color: #d32f2f;
+											color: white;
+											text-decoration: none;
+											border-radius: 5px;
+											margin-top: 10px;
+											transition: background-color 0.3s ease;
+										}
+
+										.learn-more-btn:hover {
+											background-color: #b71c1c;
+										}
+
+										.modal {
+											display: none;
+											position: fixed;
+											z-index: 1000;
+											left: 0;
+											top: 0;
+											width: 100%;
+											height: 100%;
+											background-color: rgba(0,0,0,0.5);
+										}
+
+										.modal-content {
+											background-color: white;
+											margin: 15% auto;
+											padding: 20px;
+											border-radius: 10px;
+											width: 80%;
+											max-width: 600px;
+											position: relative;
+										}
+
+										.close {
+											position: absolute;
+											right: 20px;
+											top: 10px;
+											font-size: 28px;
+											font-weight: bold;
+											cursor: pointer;
+										}
+
+										@media screen and (max-width: 768px) {
+											.timeline-container::after {
+												left: 31px;
+											}
+											
+											.timeline-item {
+												width: 100%;
+												padding-left: 70px;
+												padding-right: 25px;
+											}
+											
+											.timeline-item::after {
+												left: 15px;
+											}
+											
+											.timeline-item:nth-child(even) {
+												left: 0;
+											}
+											
+											.timeline-date {
+												position: relative;
+												top: 0;
+												transform: none;
+												width: 100%;
+												margin-bottom: 10px;
+											}
+											
+											.timeline-item:nth-child(odd) .timeline-date,
+											.timeline-item:nth-child(even) .timeline-date {
+												left: 0;
+												right: auto;
+											}
+											
+											.company-logo {
+												left: 0;
+												right: auto;
+											}
+										}
+									</style>
+
+									<div class="timeline-container">
 										<div class="timeline-item">
-											<div class="timeline-center">
-												<div class="timeline-date">Aug'24 - Present</div>
-												<div class="timeline-logo">
-													<img src="images/ephanti.jpeg" alt="Ephanti Logo">
-												</div>
-											</div>
-											<div class="timeline-content glow">
-												<h3>AI Engineer - Ephanti</h3>
-												<p class="company-name">Milpitas, CA | @Maven Assist Team</p>
-												<p>Developed an AI-driven customer segmentation system by building a GPT-4-powered ReAct AI Agent using LlamaIndex, enabling real-time, dynamic querying of e-commerce data.</p>
+											<div class="timeline-date">Aug 2024 - Present</div>
+											<img src="images/ephanti.jpeg" alt="Ephanti" class="company-logo">
+											<div class="timeline-content">
+												<h3>AI Engineer</h3>
+												<p class="company-name">Ephanti</p>
+												<p>Milpitas, CA<br>@Maven Assist Team</p>
+												<a href="#" class="learn-more-btn" onclick="openEModal(); return false;">Learn More</a>
 											</div>
 										</div>
 
 										<div class="timeline-item">
-											<div class="timeline-center">
-												<div class="timeline-date">Summer '24</div>
-												<div class="timeline-logo">
-													<img src="images/nasa.jpeg" alt="NASA Logo">
-												</div>
-											</div>
-											<div class="timeline-content glow">
-												<h3>AI/ML Intern - NASA Ames</h3>
-												<p class="company-name">Mountain View, CA | @NASA Aeronautics Research Institute</p>
-												<p>NASA OStem Internship - Contributing to innovative projects within the NASA Aeronautics Research Institute.</p>
+											<div class="timeline-date">Summer 2024</div>
+											<img src="images/nasa.jpeg" alt="NASA" class="company-logo">
+											<div class="timeline-content">
+												<h3>AI/ML Intern</h3>
+												<p class="company-name">NASA Ames Research Center</p>
+												<p>Mountain View, CA<br>@NASA Aeronautics Research Institute</p>
+												<a href="https://docs.google.com/presentation/d/14SlTD6gNFjg6Mvce0aRbDJAdBO5sYnRs/edit?usp=sharing&ouid=109890373911931743733&rtpof=true&sd=true" class="learn-more-btn">Learn More</a>
 											</div>
 										</div>
 
 										<div class="timeline-item">
-											<div class="timeline-center">
-												<div class="timeline-date">Summer '23</div>
-												<div class="timeline-logo">
-													<img src="images/nike.jpg" alt="Nike Logo">
-												</div>
-											</div>
-											<div class="timeline-content glow">
-												<h3>Graduate Data Science Intern - Nike</h3>
-												<p class="company-name">Beaverton, OR | @Merchant Financial Planning Team</p>
-												<p>Leveraged advanced ML models for multivariate time series forecasting, achieving 36% improvement in backtest accuracy and 6% WMAPE value.</p>
+											<div class="timeline-date">Summer 2023</div>
+											<img src="images/nike.jpg" alt="Nike" class="company-logo">
+											<div class="timeline-content">
+												<h3>Graduate Data Science Intern</h3>
+												<p class="company-name">Nike, Inc.</p>
+												<p>Beaverton, OR<br>@Merchant Financial Planning Team</p>
+												<a href="#" class="learn-more-btn" onclick="openModal(); return false;">Learn More</a>
 											</div>
 										</div>
 
 										<div class="timeline-item">
-											<div class="timeline-center">
-												<div class="timeline-date">Jul '20 - Sep '22</div>
-												<div class="timeline-logo">
-													<img src="images/UA.jpeg" alt="United Airlines Logo">
-												</div>
-											</div>
-											<div class="timeline-content glow">
-												<h3>Associate Analyst - United Airlines</h3>
-												<p class="company-name">Delhi, India | @Airport Operations Team</p>
-												<p>Spearheaded operational data initiatives, designed BI dashboards for 20,000+ employees, achieved 5-point NPS boost and 6% improvement in reliability forecasting.</p>
+											<div class="timeline-date">Jul 2020 - Sep 2022</div>
+											<img src="images/UA.jpeg" alt="United Airlines" class="company-logo">
+											<div class="timeline-content">
+												<h3>Associate Analyst</h3>
+												<p class="company-name">United Airlines, Inc.</p>
+												<p>Delhi, India<br>@Airport Operations Team</p>
+												<a href="#" class="learn-more-btn" onclick="openUnitedModal(); return false;">Learn More</a>
 											</div>
 										</div>
 
 										<div class="timeline-item">
-											<div class="timeline-center">
-												<div class="timeline-date">Summer '19</div>
-												<div class="timeline-logo">
-													<img src="images/BS.png" alt="Birlasoft Logo">
-												</div>
-											</div>
-											<div class="timeline-content glow">
-												<h3>Analytics Intern - Birlasoft</h3>
-												<p class="company-name">Delhi-NCR, India | @IT Transformation Team</p>
-												<p>Improved forecast accuracy by 29% using LSTM and Holt-Winters Smoothing for energy demand predictions.</p>
+											<div class="timeline-date">Summer 2019</div>
+											<img src="images/BS.png" alt="Birlasoft" class="company-logo">
+											<div class="timeline-content">
+												<h3>Analytics Intern</h3>
+												<p class="company-name">Birlasoft, C.K. Birla Group</p>
+												<p>Delhi-NCR, India<br>@IT Transformation Team</p>
+												<a href="#" class="learn-more-btn" onclick="openBSModal(); return false;">Learn More</a>
 											</div>
 										</div>
 									</div>
-
-									<script>
-										// Create stars
-										function createStars() {
-											const starsContainer = document.getElementById('stars');
-											const starCount = 100;
-
-											for (let i = 0; i < starCount; i++) {
-												const star = document.createElement('div');
-												star.className = 'star';
-												star.style.width = Math.random() * 3 + 'px';
-												star.style.height = star.style.width;
-												star.style.left = Math.random() * 100 + '%';
-												star.style.top = Math.random() * 100 + '%';
-												star.style.animationDelay = Math.random() * 3 + 's';
-												starsContainer.appendChild(star);
-											}
-										}
-
-										// Timeline animation
-										function animateTimeline() {
-											const items = document.querySelectorAll('.timeline-item');
-											const observer = new IntersectionObserver((entries) => {
-												entries.forEach(entry => {
-													if (entry.isIntersecting) {
-														entry.target.classList.add('visible');
-													}
-												});
-											}, { threshold: 0.5 });
-
-											items.forEach(item => observer.observe(item));
-										}
-
-										// Initialize
-										document.addEventListener('DOMContentLoaded', () => {
-											createStars();
-											animateTimeline();
-										});
-									</script>
 								</section>
 
 								<section id="education">
