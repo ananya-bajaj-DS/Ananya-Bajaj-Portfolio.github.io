@@ -10,8 +10,171 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* Dark Space Theme */
+			:root {
+				--space-bg: #0a0a1a;
+				--space-text: #e0e0ff;
+				--space-accent: #4a90e2;
+				--space-glow: #6b8aff;
+				--space-card: rgba(16, 16, 32, 0.8);
+			}
+
+			body {
+				background: var(--space-bg);
+				color: var(--space-text);
+				background-image: 
+					radial-gradient(circle at 50% 50%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
+					radial-gradient(circle at 80% 20%, rgba(107, 138, 255, 0.1) 0%, transparent 50%);
+			}
+
+			/* Starry background animation */
+			@keyframes twinkle {
+				0% { opacity: 0.3; }
+				50% { opacity: 1; }
+				100% { opacity: 0.3; }
+			}
+
+			.stars {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				pointer-events: none;
+				z-index: -1;
+			}
+
+			.star {
+				position: absolute;
+				background: white;
+				border-radius: 50%;
+				animation: twinkle 3s infinite;
+			}
+
+			/* Glowing elements */
+			.glow {
+				box-shadow: 0 0 15px var(--space-glow);
+				transition: all 0.3s ease;
+			}
+
+			.glow:hover {
+				box-shadow: 0 0 25px var(--space-glow);
+				transform: translateY(-2px);
+			}
+
+			/* Card styling */
+			.card {
+				background: var(--space-card);
+				border: 1px solid rgba(107, 138, 255, 0.2);
+				border-radius: 10px;
+				backdrop-filter: blur(10px);
+			}
+
+			/* Timeline styling */
+			.timeline {
+				position: relative;
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 20px;
+			}
+
+			.timeline::after {
+				content: '';
+				position: absolute;
+				width: 4px;
+				background: linear-gradient(to bottom, var(--space-accent), var(--space-glow));
+				top: 0;
+				bottom: 0;
+				left: 50%;
+				margin-left: -2px;
+				border-radius: 2px;
+			}
+
+			.timeline-item {
+				padding: 10px 40px;
+				position: relative;
+				width: 50%;
+				opacity: 0;
+				transform: translateX(-100px);
+				transition: all 0.5s ease;
+			}
+
+			.timeline-item.visible {
+				opacity: 1;
+				transform: translateX(0);
+			}
+
+			.timeline-item:nth-child(even) {
+				left: 50%;
+				transform: translateX(100px);
+			}
+
+			.timeline-item:nth-child(even).visible {
+				transform: translateX(0);
+			}
+
+			.timeline-content {
+				padding: 20px;
+				background: var(--space-card);
+				border-radius: 10px;
+				position: relative;
+				border: 1px solid rgba(107, 138, 255, 0.2);
+			}
+
+			.timeline-content::after {
+				content: '';
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				right: -10px;
+				background: var(--space-accent);
+				border: 4px solid var(--space-bg);
+				top: 15px;
+				border-radius: 50%;
+				z-index: 1;
+			}
+
+			.timeline-item:nth-child(even) .timeline-content::after {
+				left: -10px;
+			}
+
+			/* AI-powered animations */
+			@keyframes float {
+				0% { transform: translateY(0px); }
+				50% { transform: translateY(-10px); }
+				100% { transform: translateY(0px); }
+			}
+
+			.timeline-content {
+				animation: float 6s ease-in-out infinite;
+			}
+
+			/* Responsive design */
+			@media screen and (max-width: 768px) {
+				.timeline::after {
+					left: 31px;
+				}
+
+				.timeline-item {
+					width: 100%;
+					padding-left: 70px;
+					padding-right: 25px;
+				}
+
+				.timeline-item:nth-child(even) {
+					left: 0;
+				}
+
+				.timeline-content::after {
+					left: -10px;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
+		<!-- Starry Background -->
+		<div class="stars" id="stars"></div>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -65,7 +228,7 @@
 											<h1>Ananya Bajaj</h1>
 											<p>Data Scientist | AI Engineer @Ephanti | Ex-AI/ML @NASA </p>
 										</header>
-										<p>I hold a Master’s degree in Data Science from the University of Washington, with research focus on Natural Language Processing. I had the honor of serving as the graduate commencement speaker for the Class of 2024. In the summer of '24, I interned at the NASA Ames Research Center as an AI/ML Intern, contributing to innovative projects within the NASA Aeronautics Research Institute. I have 2+ years of professional and research experience, spanning diverse industries—including aerospace, aviation, healthcare, and retail, where I have tackled complex, cross-domain data challenges. <br><br>
+										<p>I hold a Master's degree in Data Science from the University of Washington, with research focus on Natural Language Processing. I had the honor of serving as the graduate commencement speaker for the Class of 2024. In the summer of '24, I interned at the NASA Ames Research Center as an AI/ML Intern, contributing to innovative projects within the NASA Aeronautics Research Institute. I have 2+ years of professional and research experience, spanning diverse industries—including aerospace, aviation, healthcare, and retail, where I have tackled complex, cross-domain data challenges. <br><br>
 
 											Beyond coding and algorithms, I enjoy writing, from story-telling to talking tech. In the evenings, you can find me dancing Salsa, Bachata, or Bollywood!</p>
 									
@@ -350,347 +513,101 @@
 									</div>
 								</section>
 
-<!-- TESTT SECIN -->
-
-    <!-- <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: white;
-            padding: 20px;
-        }
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: auto;
-        }
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background-color: #333;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-        }
-        .container {
-            padding: 20px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-        .left {
-            left: 0;
-        }
-        .right {
-            left: 50%;
-        }
-        .content {
-            padding: 20px;
-            background: #1e1e1e;
-            position: relative;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
-        }
-        .content h3 {
-            margin: 0;
-            color: #ffcc00;
-        }
-        .content p {
-            margin: 5px 0 0;
-            font-size: 14px;
-            color: #bbb;
-        }
-        @media screen and (max-width: 768px) {
-            .timeline::after {
-                left: 20px;
-            }
-            .container {
-                width: 100%;
-                padding-left: 50px;
-            }
-            .right {
-                left: 0;
-            }
-        }
-    </style>
-</head>
-
-    <h2 style="text-align:center;">My Journey</h2>
-    <div class="timeline">
-        <div class="container left">
-            <div class="content">
-                <img src="images/ephanti.jpeg" alt="Ephanti Logo" class="logo">
-                <div>
-                    <h3>AI Engineer - Ephanti</h3>
-                    <p>Aug '24 - Present | @Maven Assist Team</p>
-                </div>
-            </div>
-        </div>
-        <div class="container right">
-            <div class="content">
-                <img src="images/nasa.jpeg" alt="NASA Logo" class="logo">
-                <div>
-                    <h3>AI/ML Intern - NASA Ames</h3>
-                    <p>Summer '24 | @NASA Aeronautics Research Institute</p>
-                </div>
-            </div>
-        </div>
-        <div class="container left">
-            <div class="content">
-                <img src="images/nike.jpg" alt="Nike Logo" class="logo">
-                <div>
-                    <h3>Graduate Data Science Intern - Nike</h3>
-                    <p>Summer '23 | @Merchant Financial Planning Team</p>
-                </div>
-            </div>
-        </div>
-        <div class="container right">
-            <div class="content">
-                <img src="images/UA.jpeg" alt="United Airlines Logo" class="logo">
-                <div>
-                    <h3>Associate Analyst - United Airlines</h3>
-                    <p>Nov '20 - Sep '22 | @Airport Operations Team</p>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-
-
- <!-- TEST SEC ends -->
-							
-							
 								<!-- Section -->
 								<section id="experience">
 									<header class="major">
-										<style>
-											.cropped-image {
-											  width: 300px; /* Desired width for the cropped image */
-											  height: 250px; /* Desired height for the cropped image */
-											  object-fit: cover; /* Crops the image to fill the container while preserving aspect ratio */
-											  object-position: top; /* Centers the image within the cropped area */
-											}
-										  </style>
 										<h2>Professional Experience</h2>
 									</header>
-									<div class="posts">
-
-										<style>
-											/* Uniform size for all images */
-											.uniform-image {
-											  width: 240; /* Desired width */
-											  height: 240px; /* Desired height */
-											  object-fit: cover; /* Ensures the image covers the area and crops if necessary */
-											  object-position: center; /* Centers the image within the defined area */
-											  border-radius: 8px; /* Optional: adds rounded corners */
-											}
-
-											.company-name {
-												color:  #d32f2f;
-												/* font-weight: bold; */
-												font-size: 1.1em;
-												margin-top: -19px;
-											}
-
-											/* Modal container */
-											.modal {
-												display: none; /* Hidden by default */
-												position: fixed; /* Stay in place */
-												z-index: 1; /* Sit on top */
-												left: 0;
-												top: 0;
-												width: 100%; /* Full width */
-												height: 100%; /* Full height */
-												background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
-											}
-
-											/* Modal content */
-											.modal-content {
-												background-color: white;
-												margin: 15% auto; /* 15% from the top and centered */
-												padding: 20px;
-												border-radius: 10px;
-												width: 80%; /* Modal width */
-												max-width: 500px; /* Limit maximum width */
-												box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-											}
-
-											/* Close button */
-											.close {
-												color: #aaa;
-												float: right;
-												font-size: 28px;
-												font-weight: bold;
-											}
-
-											.close:hover, .close:focus {
-												color: #000;
-												text-decoration: none;
-												cursor: pointer;
-											}
-
-
-							
-
-										  </style>
-
-											<article>
-												<a href="#" class="image"><img src="images/ephanti.jpeg" alt="" class="uniform-image"/></a>
-												<h3><strong>AI Engineer</strong></h3>
-												<p class="company-name">Ephanti</p>
-												<p>Aug'24 - Present; Milpitas, CA <br>
-												@Maven Assist Team</p>
-												<ul class="actions">
-													<!-- <li><a href="#" class="button">More</a></li> -->
-													<li><a href="#" class="button" onclick="openEModal(); return false;">More</a></li>
-												</ul>
-
-												<!-- Modal Structure -->
-												<div id="EModal" class="modal">
-													<div class="modal-content">
-														<span class="close" onclick="closeEModal()">&times;</span>
-														<h2>AI Engineer - Ephanti</h2>
-														<p><strong>Location:</strong> Milpitas, CA</p>
-														<p><strong>Duration:</strong> Aug'24 - Present</p>
-														<p><strong>Team:</strong> Maven AI Assist Team</p>
-														<p>I developed an AI-driven customer segmentation system by building a GPT-4-powered ReAct AI Agent using LlamaIndex, enabling real-time, dynamic querying of e-commerce data. This enhanced decision-making, improved customer interactions, and drove personalized engagement strategies.		</p>
-													</div>
-												</div>
-											</article>
-
-									<!-- <div class="posts"> -->
-										<article>
-											<a href="#" class="image"><img src="images/nasa.jpeg" alt="" class="uniform-image" /></a>
-											<h3><strong>AI/ML Intern</strong></h3>
-											<p class="company-name">NASA Ames Research Center</p>
-											<p>Summer '24 NASA OStem Internship; Mountain View, CA<br>
-											   @NASA Aeronautics Research Institute</p>
-				
-											<ul class="actions">
-												<li><a href="https://docs.google.com/presentation/d/14SlTD6gNFjg6Mvce0aRbDJAdBO5sYnRs/edit?usp=sharing&ouid=109890373911931743733&rtpof=true&sd=true" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/nike.jpg" alt="" class="uniform-image"/></a>
-											<h3><strong>Graduate Data Science Intern</strong></h3>
-											<p class="company-name">Nike, Inc.</p>
-											<p>Summer '23; Beaverton, OR<br>
-											   @Merchant Financial Planning Team </p>
-											<ul class="actions">
-												<!-- <li><a href="#" class="button">More</a></li> -->
-												<li><a href="#" class="button" onclick="openModal(); return false;">More</a></li>
-											</ul>
-
-											<!-- Modal Structure -->
-											<div id="myModal" class="modal">
-												<div class="modal-content">
-													<span class="close" onclick="closeModal()">&times;</span>
-													<h2>Graduate Data Science Intern - Nike, Inc.</h2>
-													<p><strong>Location:</strong> Beaverton, OR</p>
-													<p><strong>Duration:</strong> Summer '23</p>
-													<p><strong>Team:</strong> Merchant Financial Planning Team</p>
-													<p>I leveraged a diverse range of advanced machine learning models, including LSTM, Vector Auto Regression, Dynamic Linear Model (DLT), BlockRNN, Exponential Smoothing, ARIMA, Holt-Winters, and Facebook Prophet, to conduct multivariate time series forecasting of Nike’s Retail Sales Value in the NA Men's Footwear 3PW segment. By optimizing the models through techniques like Optuna & GridSearch, I achieved a 36% improvement in backtest accuracy, alongside a 6% WMAPE value, significantly enhancing the precision of our predictions and contributing to better decision-making in sales strategy.</p>
-												</div>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/UA.jpeg" alt="" class="uniform-image"/></a>
-											<h3><strong>Associate Analyst</strong></h3>
-											<p class="company-name">United Airlines, Inc.</p>
-											<p>Jul '20 - Sep '22; Delhi, India <br>
-											   @Airport Opertaions Team</p>
-											<ul class="actions">
-												<li><a href="#" class="button" onclick="openUnitedModal(); return false;">More</a></li> <!-- Prevents scroll -->
-											</ul>
-
-											<!-- Modal Structure -->
-										<div id="unitedModal" class="modal">
-											<div class="modal-content">
-												<span class="close" onclick="closeUnitedModal()">&times;</span>
-												<h2>Associate Analyst - United Airlines, Inc.</h2>
-												<p><strong>Location:</strong> Delhi, India</p>
-												<p><strong>Duration:</strong> Jul '20 - Sep '22</p>
-												<p><strong>Team:</strong> Airport Operations Team</p>
-												<p>As an Associate Analyst with United Airlines, I worked across 4 buckets namely, Data Engineering, Dashboarding, Story-telling with data, & Reporting. I spearheaded operational data initiatives at Newark Liberty International Airport, utilized extensive SQL for data analysis, and designed Spotfire-based BI dashboards utilized by over 20,000 employees across 300+ airports. My efforts resulted in a 5-point NPS boost and a 2-spot improvement in rankings YoY. I also improved reliability forecasting by 6% through predictive modeling and achieved 95% operational efficiency through Python automation.</p>
+									<div class="timeline">
+										<div class="timeline-item">
+											<div class="timeline-content glow">
+												<img src="images/ephanti.jpeg" alt="Ephanti Logo" style="width: 60px; height: 60px; border-radius: 8px; margin-bottom: 10px;">
+												<h3>AI Engineer - Ephanti</h3>
+												<p class="company-name">Aug'24 - Present</p>
+												<p>Milpitas, CA | @Maven Assist Team</p>
+												<p>Developed an AI-driven customer segmentation system by building a GPT-4-powered ReAct AI Agent using LlamaIndex, enabling real-time, dynamic querying of e-commerce data.</p>
 											</div>
 										</div>
-										
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/BS.png" alt="" class="uniform-image" /></a>
-											<h3><strong>Analytics Intern</strong></h3>
-											<p class="company-name">Birlasoft, C.K. Birla Group</p>
-											<p>Summer '19; Delhi-NCR, India<br>
-											   @IT Transformation Team</p>
-											<ul class="actions">
-												<li><a href="#" class="button" onclick="openBSModal(); return false;">More</a></li> <!-- Prevents scroll -->
-											</ul>
 
-											<!-- Modal Structure -->
-											
-											<div id="BSModal" class="modal">
-												<div class="modal-content">
-													<span class="close" onclick="closeBSModal()">&times;</span>
-													<h2>Analytics Intern - Birlasoft</h2>
-													<p><strong>Location:</strong> Delhi-NCR, India</p>
-													<p><strong>Duration:</strong> May '19 - Aug '19</p>
-													<p><strong>Team:</strong> Data Science Team</p>
-													<p>Improved forecast accuracy by 29% for Schlumberger’s energy gap Proof of Concept (POC) using advanced machine learning models, including LSTM and Holt-Winters Smoothing, leading to more precise energy demand predictions. Additionally, performed a comprehensive health analysis of the IT portfolio, identifying key areas for optimization.</p>
-												</div>
+										<div class="timeline-item">
+											<div class="timeline-content glow">
+												<img src="images/nasa.jpeg" alt="NASA Logo" style="width: 60px; height: 60px; border-radius: 8px; margin-bottom: 10px;">
+												<h3>AI/ML Intern - NASA Ames</h3>
+												<p class="company-name">Summer '24</p>
+												<p>Mountain View, CA | @NASA Aeronautics Research Institute</p>
+												<p>NASA OStem Internship - Contributing to innovative projects within the NASA Aeronautics Research Institute.</p>
 											</div>
-										</article>
+										</div>
+
+										<div class="timeline-item">
+											<div class="timeline-content glow">
+												<img src="images/nike.jpg" alt="Nike Logo" style="width: 60px; height: 60px; border-radius: 8px; margin-bottom: 10px;">
+												<h3>Graduate Data Science Intern - Nike</h3>
+												<p class="company-name">Summer '23</p>
+												<p>Beaverton, OR | @Merchant Financial Planning Team</p>
+												<p>Leveraged advanced ML models for multivariate time series forecasting, achieving 36% improvement in backtest accuracy and 6% WMAPE value.</p>
+											</div>
+										</div>
+
+										<div class="timeline-item">
+											<div class="timeline-content glow">
+												<img src="images/UA.jpeg" alt="United Airlines Logo" style="width: 60px; height: 60px; border-radius: 8px; margin-bottom: 10px;">
+												<h3>Associate Analyst - United Airlines</h3>
+												<p class="company-name">Jul '20 - Sep '22</p>
+												<p>Delhi, India | @Airport Operations Team</p>
+												<p>Spearheaded operational data initiatives, designed BI dashboards for 20,000+ employees, achieved 5-point NPS boost and 6% improvement in reliability forecasting.</p>
+											</div>
+										</div>
+
+										<div class="timeline-item">
+											<div class="timeline-content glow">
+												<img src="images/BS.png" alt="Birlasoft Logo" style="width: 60px; height: 60px; border-radius: 8px; margin-bottom: 10px;">
+												<h3>Analytics Intern - Birlasoft</h3>
+												<p class="company-name">Summer '19</p>
+												<p>Delhi-NCR, India | @IT Transformation Team</p>
+												<p>Improved forecast accuracy by 29% using LSTM and Holt-Winters Smoothing for energy demand predictions.</p>
+											</div>
+										</div>
 									</div>
-									<!-- Place this at the end of your section or main container -->
-									<script>
-										function openModal() {
-											document.getElementById("myModal").style.display = "block";
-										}
-										
-										function closeModal() {
-											document.getElementById("myModal").style.display = "none";
-										}
-										</script>
-
-										<!-- Place this at the end of your section or main container -->
-									<script>
-										function openUnitedModal() {
-											document.getElementById("unitedModal").style.display = "block";
-										}
-										
-										function closeUnitedModal() {
-											document.getElementById("unitedModal").style.display = "none";
-										}
-										</script>
-
-										<!-- Place this at the end of your section or main container -->
-									<script>
-										function openBSModal() {
-											document.getElementById("BSModal").style.display = "block";
-										}
-										
-										function closeBSModal() {
-											document.getElementById("BSModal").style.display = "none";
-										}
-										</script>
 
 									<script>
-										function openEModal() {
-											document.getElementById("EModal").style.display = "block";
+										// Create stars
+										function createStars() {
+											const starsContainer = document.getElementById('stars');
+											const starCount = 100;
+
+											for (let i = 0; i < starCount; i++) {
+												const star = document.createElement('div');
+												star.className = 'star';
+												star.style.width = Math.random() * 3 + 'px';
+												star.style.height = star.style.width;
+												star.style.left = Math.random() * 100 + '%';
+												star.style.top = Math.random() * 100 + '%';
+												star.style.animationDelay = Math.random() * 3 + 's';
+												starsContainer.appendChild(star);
+											}
 										}
-										
-										function closeEModal() {
-											document.getElementById("EModal").style.display = "none";
+
+										// Timeline animation
+										function animateTimeline() {
+											const items = document.querySelectorAll('.timeline-item');
+											const observer = new IntersectionObserver((entries) => {
+												entries.forEach(entry => {
+													if (entry.isIntersecting) {
+														entry.target.classList.add('visible');
+													}
+												});
+											}, { threshold: 0.5 });
+
+											items.forEach(item => observer.observe(item));
 										}
-										</script>
+
+										// Initialize
+										document.addEventListener('DOMContentLoaded', () => {
+											createStars();
+											animateTimeline();
+										});
+									</script>
 								</section>
 
 								<section id="education">
@@ -867,7 +784,7 @@
 										max-width: 100%; /* Prevent overflow */
 										word-wrap: break-word; /* Prevents overflowing text */
            
-										white-space: normal; /* Make sure it wraps and doesn’t get cut */
+										white-space: normal; /* Make sure it wraps and doesn't get cut */
 									}
 
 									.project-card p {
@@ -877,7 +794,7 @@
 										max-width: 100%; /* Prevent overflow */
 										word-wrap: break-word; /* Prevents overflowing text */
             
-										white-space: normal; /* Make sure it wraps and doesn’t get cut */
+										white-space: normal; /* Make sure it wraps and doesn't get cut */
 									}
 
 									.project-card .metadata {
@@ -1457,7 +1374,7 @@
 									<header class="major">
 										<h2>Get in touch</h2>
 									</header>
-									<p>I’m always excited to connect with professionals, collaborators, or anyone interested in discussing data science, AI/ML, or exciting projects. Whether you have a question, want to collaborate, or just want to say hello, feel free to reach out to me!</p>
+									<p>I'm always excited to connect with professionals, collaborators, or anyone interested in discussing data science, AI/ML, or exciting projects. Whether you have a question, want to collaborate, or just want to say hello, feel free to reach out to me!</p>
 									<ul class="contact">
 										<li class="icon solid fa-envelope"><a href="#">ananyabajaj.dtu17@gmail.com</a></li>
 										<li class="icon solid fa-phone">(206) 218-4974</li>
