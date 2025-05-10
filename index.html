@@ -530,30 +530,19 @@
 											left: -44px;
 										}
 										.company-logo {
-											width: 80px;
-											height: 80px;
+											width: 100%;
+											height: 100%;
 											border-radius: 50%;
-											position: relative;
-											top: 0%;
-											background: #fff;
 											object-fit: cover;
-											box-shadow: 0 0 24px 4px #f56a6a55;
-											border: 3px solid #f56a6a;
-											transform: translateY(0%);
-
-											/* transform: translateY(-50%); */
-											z-index: 3;
-											transition: box-shadow 0.3s, transform 0.2s;
+											box-shadow: none;
+											border: none;
+											display: block;
 										}
 										.timeline-item:nth-child(odd) .company-logo {
-											right: -50px;
+											right: 0;
 										}
 										.timeline-item:nth-child(even) .company-logo {
-											left: 50px;
-										}
-										.company-logo:hover {
-											box-shadow: 0 0 36px 8px #f56a6a99;
-											transform: translateY(-50%) scale(1.07);
+											left: 0;
 										}
 										.timeline-date {
 											position: absolute;
