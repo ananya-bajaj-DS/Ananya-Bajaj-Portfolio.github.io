@@ -151,13 +151,13 @@
 												<style>
 													.frameworks-grid {
 														display: grid;
-														grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-														gap: 28px 32px;
+														grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+														gap: 16px 18px;
 														justify-items: center;
 														align-items: end;
-														margin: 32px 0 0 0;
-														padding: 0 10px;
-														max-width: 700px;
+														margin: 24px 0 0 0;
+														padding: 0 4px;
+														max-width: 500px;
 														margin-left: auto;
 														margin-right: auto;
 													}
@@ -166,23 +166,22 @@
 														flex-direction: column;
 														align-items: center;
 														background: #fff;
-														border-radius: 14px;
-														box-shadow: 0 2px 8px #eee;
-														padding: 14px 10px 8px 10px;
+														border-radius: 10px;
+														box-shadow: 0 1px 4px #eee;
+														padding: 8px 4px 4px 4px;
 														transition: box-shadow 0.2s, transform 0.2s;
-														width: 100px;
-														height: 110px;
+														width: 60px;
+														height: 60px;
 														justify-content: center;
 													}
 													.framework-card:hover {
-														box-shadow: 0 6px 18px #f56a6a33;
+														box-shadow: 0 4px 12px #f56a6a33;
 														transform: scale(1.07);
 													}
 													.framework-logo {
-														width: 60px;
-														height: 60px;
+														width: 40px;
+														height: 40px;
 														object-fit: contain;
-														margin-bottom: 8px;
 														display: block;
 													}
 													.framework-label {
@@ -196,47 +195,36 @@
 												<div class="frameworks-grid">
 													<div class="framework-card">
 														<img src="images/tensorflow.png" alt="TensorFlow" class="framework-logo">
-														<div class="framework-label">TensorFlow</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/theano.png" alt="Theano" class="framework-logo">
-														<div class="framework-label">Theano</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/Keras.png" alt="Keras" class="framework-logo">
-														<div class="framework-label">Keras</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/Pytorch.svg" alt="PyTorch" class="framework-logo">
-														<div class="framework-label">PyTorch</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/matplotlib.png" alt="Matplotlib" class="framework-logo">
-														<div class="framework-label">Matplotlib</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/numpy.png" alt="NumPy" class="framework-logo">
-														<div class="framework-label">NumPy</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/pandas.png" alt="Pandas" class="framework-logo">
-														<div class="framework-label">Pandas</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/darts.jpeg" alt="Darts" class="framework-logo">
-														<div class="framework-label">Darts</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/pyspark.jpeg" alt="PySpark" class="framework-logo">
-														<div class="framework-label">PySpark</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/scikit-learn.png" alt="Scikit-learn" class="framework-logo">
-														<div class="framework-label">Scikit-learn</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/seaborn.png" alt="Seaborn" class="framework-logo">
-														<div class="framework-label">Seaborn</div>
 													</div>
 												</div>
 											</div>
@@ -530,18 +518,15 @@
 											left: -44px;
 										}
 										.company-logo {
-											width: 80px;
-											height: 80px;
-											border-radius: 50%;
-											position: absolute;
-											top: 50%;
-											background: #fff;
+											width: 100%;
+											height: 100%;
 											object-fit: cover;
+											border-radius: 50%;
+											background: #fff;
 											border: none;
 											box-shadow: none;
 											position: static;
-											transition: box-shadow 0.3s, transform 0.2s;
-											/* margin-top: -8px; */
+											margin: 0;
 										}
 										.timeline-item:nth-child(odd) .company-logo {
 											right: 0px;
@@ -549,9 +534,11 @@
 										.timeline-item:nth-child(even) .company-logo {
 											left: 0px;
 										}
-										.company-logo:hover {
-											box-shadow: 0 0 36px 8px #f56a6a99;
-											transform: translateY(-50%) scale(1.07);
+										.timeline-item:nth-child(odd) .timeline-date {
+											right: -220px;
+										}
+										.timeline-item:nth-child(even) .timeline-date {
+											left: -220px;
 										}
 										.timeline-date {
 											position: absolute;
@@ -571,12 +558,6 @@
 											transition: box-shadow 0.2s, color 0.2s;
 											letter-spacing: 0.5px;
 											display: inline-block;
-										}
-										.timeline-item:nth-child(odd) .timeline-date {
-											right: -220px;
-										}
-										.timeline-item:nth-child(even) .timeline-date {
-											left: -220px;
 										}
 										.timeline-content {
 											background: #fff;
