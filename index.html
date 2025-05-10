@@ -148,16 +148,16 @@
 										<article>
 											<div class="content">
 												<h3>Packages / Frameworks</h3>
-												<style>
+													<style>
 													.frameworks-grid {
 														display: grid;
-														grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-														gap: 16px 18px;
+														grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+														gap: 28px 32px;
 														justify-items: center;
 														align-items: end;
-														margin: 24px 0 0 0;
-														padding: 0 4px;
-														max-width: 500px;
+														margin: 32px 0 0 0;
+														padding: 0 10px;
+														max-width: 700px;
 														margin-left: auto;
 														margin-right: auto;
 													}
@@ -166,22 +166,23 @@
 														flex-direction: column;
 														align-items: center;
 														background: #fff;
-														border-radius: 10px;
-														box-shadow: 0 1px 4px #eee;
-														padding: 8px 4px 4px 4px;
+														border-radius: 14px;
+														box-shadow: 0 2px 8px #eee;
+														padding: 14px 10px 8px 10px;
 														transition: box-shadow 0.2s, transform 0.2s;
-														width: 60px;
-														height: 60px;
+														width: 100px;
+														height: 110px;
 														justify-content: center;
 													}
 													.framework-card:hover {
-														box-shadow: 0 4px 12px #f56a6a33;
+														box-shadow: 0 6px 18px #f56a6a33;
 														transform: scale(1.07);
 													}
 													.framework-logo {
-														width: 40px;
-														height: 40px;
+														width: 60px;
+														height: 60px;
 														object-fit: contain;
+														margin-bottom: 8px;
 														display: block;
 													}
 													.framework-label {
@@ -191,40 +192,51 @@
 														margin-top: 2px;
 														font-weight: 500;
 													}
-												</style>
+													</style>
 												<div class="frameworks-grid">
 													<div class="framework-card">
 														<img src="images/tensorflow.png" alt="TensorFlow" class="framework-logo">
-													</div>
+														<div class="framework-label">TensorFlow</div>
+												</div>
 													<div class="framework-card">
 														<img src="images/theano.png" alt="Theano" class="framework-logo">
+														<div class="framework-label">Theano</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/Keras.png" alt="Keras" class="framework-logo">
+														<div class="framework-label">Keras</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/Pytorch.svg" alt="PyTorch" class="framework-logo">
+														<div class="framework-label">PyTorch</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/matplotlib.png" alt="Matplotlib" class="framework-logo">
+														<div class="framework-label">Matplotlib</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/numpy.png" alt="NumPy" class="framework-logo">
+														<div class="framework-label">NumPy</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/pandas.png" alt="Pandas" class="framework-logo">
+														<div class="framework-label">Pandas</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/darts.jpeg" alt="Darts" class="framework-logo">
+														<div class="framework-label">Darts</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/pyspark.jpeg" alt="PySpark" class="framework-logo">
+														<div class="framework-label">PySpark</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/scikit-learn.png" alt="Scikit-learn" class="framework-logo">
+														<div class="framework-label">Scikit-learn</div>
 													</div>
 													<div class="framework-card">
 														<img src="images/seaborn.png" alt="Seaborn" class="framework-logo">
+														<div class="framework-label">Seaborn</div>
 													</div>
 												</div>
 											</div>
@@ -443,7 +455,7 @@
 									<header class="major">
 										<h2>Professional Experience</h2>
 									</header>
-									<style>
+										<style>
 										/* Timeline Modernization */
 										.timeline-bg {
 											background: #f5f5f5;
@@ -465,7 +477,7 @@
 											position: absolute;
 											width: 3px;
 											background: #f56a6a;
-											top: 0;
+												top: 0;
 											bottom: 0;
 											left: 50%;
 											margin-left: -1.5px;
@@ -612,7 +624,7 @@
 											font-size: 1em;
 											margin-top: 10px;
 											box-shadow: none;
-											cursor: pointer;
+												cursor: pointer;
 											transition: color 0.2s, text-decoration 0.2s;
 											outline: none;
 											text-transform: none;
@@ -685,7 +697,7 @@
 										.timeline-item.visible .company-logo {
 											transform: translateY(0) translateX(0) scale(1);
 										}
-									</style>
+										  </style>
 									<div class="timeline-bg">
 										<div class="timeline-container">
 											<div class="timeline-item">
@@ -696,8 +708,8 @@
 													<div class="company-name">Ephanti</div>
 													<p>Milpitas, CA<br>@Maven Assist Team</p>
 													<button class="learn-more-btn" onclick="openEModal(); return false;">Learn More</button>
+													</div>
 												</div>
-											</div>
 											<div class="timeline-item">
 												<div class="timeline-date">Summer 2024</div>
 												<div class="timeline-circle"><img src="images/nasa.jpeg" alt="NASA" class="company-logo"></div>
@@ -716,8 +728,8 @@
 													<div class="company-name">Nike, Inc.</div>
 													<p>Beaverton, OR<br>@Merchant Financial Planning Team</p>
 													<button class="learn-more-btn" onclick="openModal(); return false;">Learn More</button>
-												</div>
 											</div>
+										</div>
 											<div class="timeline-item">
 												<div class="timeline-date">Jul 2020 - Sep 2022</div>
 												<div class="timeline-circle"><img src="images/UA.jpeg" alt="United Airlines" class="company-logo"></div>
@@ -736,7 +748,7 @@
 													<div class="company-name">Birlasoft, C.K. Birla Group</div>
 													<p>Delhi-NCR, India<br>@IT Transformation Team</p>
 													<button class="learn-more-btn" onclick="openBSModal(); return false;">Learn More</button>
-												</div>
+									</div>
 											</div>
 										</div>
 									</div>
